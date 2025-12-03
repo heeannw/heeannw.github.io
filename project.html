@@ -9,54 +9,67 @@
 
 <body>
 
-<div id="content">로딩 중...</div>
+<div id="content" class="detail-container">로딩 중...</div>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
+const id = params.get("id");
 
-fetch('data/projects.json')
+fetch("data/projects.json")
   .then(res => res.json())
   .then(projects => {
     const p = projects.find(x => x.id == id);
 
     document.title = p.title;
 
-    document.getElementById('content').innerHTML = `
-      <header class="header small">
-        <h1>${p.title}</h1>
-        <a href="index.html" class="back-btn">← 돌아가기</a>
+    document.getElementById("content").innerHTML = `
+      <!-- 상단 헤더 -->
+      <header class="project-header">
+        <div class="project-title-box">
+          <h1 class="project-title">${p.title}</h1>
+          <p class="team-name">${p.team}</p>
+        </div>
+
+        <a href="index.html" class="back-button">← 목록으로</a>
       </header>
 
-      <section class="detail">
-        <img src="${p.thumbnail}" class="detail-img">
-
-        <h2>팀원 소개</h2>
-        <div class="members">
-          ${p.members.map(m => `
-            <div class="member-card">
-              <img src="${m.photo || 'assets/members/default.png'}" class="member-photo">
-              <h4>${m.name}</h4>
-              <p>${m.role}</p>
-            </div>
-          `).join('')}
-        </div>
-
-        <h2>프로젝트 설명</h2>
-        <p>${p.description}</p>
-
-        <h2>자료 다운로드</h2>
-        <div class="buttons">
-          ${p.ppt ? `<a class="btn" href="${p.ppt}">📊 PPT</a>` : ""}
-          ${p.report ? `<a class="btn" href="${p.report}">📄 보고서</a>` : ""}
-          ${p.github ? `<a class="btn" href="${p.github}">💻 GitHub</a>` : ""}
-          ${p.video ? `<a class="btn" href="${p.video}">🎬 시연 영상</a>` : ""}
-        </div>
+      <!-- 대표 이미지 + 소개글 -->
+      <section class="project-image-section">
+        <img src="${p.thumbnail}" class="project-image">
+        <p class="project-description">${p.description}</p>
       </section>
 
-      <footer class="footer">© 2025 한양여대 빅데이터학과</footer>
+      <!-- 팀원 소개 -->
+      <h2 class="section-title">팀원 소개</h2>
+
+      <section class="members">
+        ${p.members.map(m => `
+          <div class="member-card">
+            <img src="${m.photo || 'assets/members/default.png'}" class="member-photo">
+
+            <div class="member-overlay">
+              <p class="member-role">
+                <b>${m.name}</b><br>
+                ${m.role}
+              </p>
+            </div>
+          </div>
+        `).join("")}
+      </section>
+
+      <!-- 자료 다운로드 -->
+      <h2 class="section-title">자료 다운로드</h2>
+
+      <section class="buttons">
+        ${p.ppt ? `<a class="btn" href="${p.ppt}" download>📊 PPT 다운로드</a>` : ""}
+        ${p.report ? `<a class="btn" href="${p.report}" download>📄 보고서 다운로드</a>` : ""}
+        ${p.github ? `<a class="btn" href="${p.github}" target="_blank">💻 GitHub</a>` : ""}
+        ${p.video ? `<a class="btn" href="${p.video}" target="_blank">🎬 시연영상</a>` : ""}
+      </section>
+
+      <footer class="footer">© 2025 한양여자대학교 빅데이터학과 졸업전시회</footer>
     `;
-});
+  });
 </script>
 
 </body>
