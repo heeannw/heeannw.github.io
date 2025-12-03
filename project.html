@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>작품 상세보기</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="content">로딩 중...</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+
+fetch('data/projects.json')
+  .then(res => res.json())
+  .then(projects => {
+    const p = projects.find(x => x.id == id);
+
+    document.title = p.title;
+
+    document.getElementById('content').innerHTML = `
+      <header class="header small">
+        <h1>${p.title}</h1>
+        <a href="index.html" class="back-btn">← 돌아가기</a>
+      </header>
+
+      <section class="detail">
+        <img src="${p.thumbnail}" class="detail-img">
+
+        <h2>팀원 소개</h2>
+        <div class="members">
+          ${p.members.map(m => `
+            <div class="member-card">
+              <img src="${m.photo || 'assets/members/default.png'}" class="member-photo">
+              <h4>${m.name}</h4>
+              <p>${m.role}</p>
+            </div>
+          `).join('')}
+        </div>
+
+        <h2>프로젝트 설명</h2>
+        <p>${p.description}</p>
+
+        <h2>자료 다운로드</h2>
+        <div class="buttons">
+          ${p.ppt ? `<a class="btn" href="${p.ppt}">📊 PPT</a>` : ""}
+          ${p.report ? `<a class="btn" href="${p.report}">📄 보고서</a>` : ""}
+          ${p.github ? `<a class="btn" href="${p.github}">💻 GitHub</a>` : ""}
+          ${p.video ? `<a class="btn" href="${p.video}">🎬 시연 영상</a>` : ""}
+        </div>
+      </section>
+
+      <footer class="footer">© 2025 한양여대 빅데이터학과</footer>
+    `;
+});
+</script>
+
+</body>
+</html>
