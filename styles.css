@@ -1,111 +1,146 @@
-body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #f7f9fc;
+/* 상세 페이지 전체 */
+.detail-container {
+    background: #f4f6fa;
 }
 
-/* 헤더 */
-.header {
-    text-align: center;
-    padding: 50px 20px;
+/* 상단 헤더 */
+.project-header {
     background: #005BAC;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
 }
-.header.small {
-    padding: 30px;
+
+.project-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
 }
 
-/* 메인 제목 */
-.subtitle {
-    margin-top: -10px;
-    font-size: 18px;
-    opacity: 0.8;
+.team-name {
+    margin-top: 8px;
+    font-size: 16px;
+    opacity: 0.9;
 }
 
-/* 갤러리 */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-}
-
-/* 카드 */
-.card {
-    background: white;
+.back-button {
+    background: #4DB8FF;
+    padding: 10px 18px;
     border-radius: 10px;
-    overflow: hidden;
+    color: white;
     text-decoration: none;
-    color: black;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-weight: 600;
     transition: 0.2s;
 }
-.card:hover {
-    transform: translateY(-6px);
-}
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+
+.back-button:hover {
+    background: #3AA4EB;
 }
 
-.card-content {
-    padding: 15px;
-}
-
-/* 상세페이지 */
-.detail {
+/* 대표 이미지 */
+.project-image-section {
     max-width: 900px;
     margin: 40px auto;
-    padding: 0 20px;
+    text-align: center;
 }
 
-.detail-img {
+.project-image {
     width: 100%;
-    border-radius: 10px;
-}
-
-/* 팀원 카드 */
-.members {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 
+.project-description {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 팀원 소개 */
+.section-title {
+    max-width: 900px;
+    margin: 40px auto 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.members {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .member-card {
-    width: 140px;
-    padding: 10px;
-    background: white;
+    width: 180px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .member-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* 버튼 */
-.btn {
-    display: inline-block;
-    margin: 6px 8px 0 0;
-    padding: 10px 15px;
-    background: #0068CF;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
+/* hover overlay */
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 91, 172, 0.75);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: 0.25s;
 }
 
-/* 푸터 */
+.member-card:hover .member-overlay {
+    opacity: 1;
+}
+
+.member-role {
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* 자료 다운로드 버튼 */
+.buttons {
+    max-width: 900px;
+    margin: 20px auto 60px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 8px 14px 0 0;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #005BAC;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #004A93;
+}
+
+/* footer */
 .footer {
+    background: #003A78;
+    color: white;
     padding: 20px;
     text-align: center;
-    background: #003B75;
-    color: white;
-    margin-top: 40px;
 }
