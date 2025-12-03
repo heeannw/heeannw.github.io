@@ -1,81 +1,16 @@
-/* 공통 기본 스타일 */
-body {
-    margin: 0;
-    font-family: "Noto Sans KR", sans-serif;
-    background: #f8f9fc;
-    color: #222;
-}
+/* ---------------------------------------
+   🎨 프로젝트 상세 페이지 전체 스타일 정리본
+-----------------------------------------*/
 
-/* 상단 메인 배너 */
-header {
-    background: #003e88;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-header p {
-    margin-top: 6px;
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-/* 카드 리스트 (index.html) */
-.grid {
-    max-width: 1200px;
-    margin: 40px auto;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-}
-
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
-    transition: 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 8px;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 12px;
-}
-
-.card-team {
-    font-size: 14px;
-    margin-top: 6px;
-    opacity: 0.7;
-}
-
-/* 상세 페이지 ---------------------------- */
-
+/* 전체 배경 */
 .detail-container {
     background: #f4f6fa;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 상단 헤더 */
+/* ---------------------------------------
+   🔵 상단 헤더 (작품명 + 팀명 + 돌아가기 버튼)
+-----------------------------------------*/
 .project-header {
     background: #005BAC;
     padding: 40px 20px;
@@ -85,25 +20,32 @@ header p {
     color: white;
 }
 
+/* 작품명 + 팀명 세로정렬 */
+.project-title-box {
+    display: flex;
+    flex-direction: column;
+}
+
 .project-title {
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 700;
     margin: 0;
 }
 
 .team-name {
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 16px;
     opacity: 0.9;
 }
 
+/* 돌아가기 버튼 */
 .back-button {
-    background: #4DB8FF;
+    background: #69B7FF;
     padding: 10px 18px;
-    border-radius: 10px;
-    color: white;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+    color: white;
     transition: 0.2s;
 }
 
@@ -111,7 +53,9 @@ header p {
     background: #3AA4EB;
 }
 
-/* 대표 이미지 */
+/* ---------------------------------------
+   🖼 대표 이미지 + 작품 설명
+-----------------------------------------*/
 .project-image-section {
     max-width: 900px;
     margin: 40px auto;
@@ -121,37 +65,42 @@ header p {
 .project-image {
     width: 100%;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .project-description {
     text-align: left;
-    line-height: 1.6;
+    margin-top: 10px;
     font-size: 16px;
+    line-height: 1.6;
 }
 
-/* 팀원 소개 */
+/* ---------------------------------------
+   👥 팀원 소개
+-----------------------------------------*/
 .section-title {
     max-width: 900px;
     margin: 40px auto 10px;
+    padding-left: 10px;
     font-size: 22px;
     font-weight: bold;
 }
 
 .members {
-    max-width: 900px;
-    margin: 0 auto 40px;
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto 40px;
 }
 
 .member-card {
-    width: 180px;
-    height: 220px;
+    width: 170px;
+    height: 200px;
     position: relative;
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
+    background-color: #ddd;
 }
 
 .member-photo {
@@ -160,6 +109,7 @@ header p {
     object-fit: cover;
 }
 
+/* 팀원 Hover Overlay */
 .member-overlay {
     position: absolute;
     top: 0;
@@ -186,7 +136,9 @@ header p {
     text-align: left;
 }
 
-/* 다운로드 버튼 */
+/* ---------------------------------------
+   📁 자료 다운로드 버튼 (PPT/보고서/깃허브/영상)
+-----------------------------------------*/
 .buttons {
     max-width: 900px;
     margin: 20px auto 60px;
@@ -199,8 +151,8 @@ header p {
     border-radius: 10px;
     background: #005BAC;
     color: white;
-    font-weight: 600;
     text-decoration: none;
+    font-weight: 600;
     transition: 0.2s;
 }
 
@@ -208,7 +160,9 @@ header p {
     background: #004A93;
 }
 
-/* footer */
+/* ---------------------------------------
+   🦶 푸터
+-----------------------------------------*/
 .footer {
     background: #003A78;
     color: white;
