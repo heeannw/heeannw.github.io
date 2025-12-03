@@ -1,4 +1,76 @@
-/* 상세 페이지 전체 */
+/* 공통 기본 스타일 */
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    background: #f8f9fc;
+    color: #222;
+}
+
+/* 상단 메인 배너 */
+header {
+    background: #003e88;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+header p {
+    margin-top: 6px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* 카드 리스트 (index.html) */
+.grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.card-team {
+    font-size: 14px;
+    margin-top: 6px;
+    opacity: 0.7;
+}
+
+/* 상세 페이지 ---------------------------- */
+
 .detail-container {
     background: #f4f6fa;
 }
@@ -88,7 +160,6 @@
     object-fit: cover;
 }
 
-/* hover overlay */
 .member-overlay {
     position: absolute;
     top: 0;
@@ -115,7 +186,7 @@
     text-align: left;
 }
 
-/* 자료 다운로드 버튼 */
+/* 다운로드 버튼 */
 .buttons {
     max-width: 900px;
     margin: 20px auto 60px;
