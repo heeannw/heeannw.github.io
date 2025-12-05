@@ -34,7 +34,7 @@
 <script>
 let rawData = [];
 
-// JSON 로드
+// ✅ JSON 로드
 fetch("data/projects.json")
   .then(res => res.json())
   .then(data => {
@@ -42,7 +42,7 @@ fetch("data/projects.json")
     renderList(data);
   });
 
-// 카드 렌더링 함수
+// ✅ 카드 렌더링 함수
 function renderList(list) {
   const gallery = document.getElementById("gallery");
 
@@ -51,20 +51,20 @@ function renderList(list) {
       p => `
       <a href="project.html?id=${p.id}" class="card">
         <h3>${p.projectTitle}</h3>
-        <p class="team">${p.teamName || p.leader}</p>
+        <p class="team">${p.teamName || p.leader || "팀명 없음"}</p>
       </a>`
     )
     .join("");
 }
 
-// 🔍 검색 기능
+// ✅ 🔍 검색 기능 (members 예외 처리 적용 버전)
 document.getElementById("searchInput").addEventListener("input", function () {
   const keyword = this.value.toLowerCase();
 
   const filtered = rawData.filter(p =>
     p.projectTitle.toLowerCase().includes(keyword) ||
     (p.teamName && p.teamName.toLowerCase().includes(keyword)) ||
-    p.members.some(m => m.name.toLowerCase().includes(keyword))
+    (p.members && p.members.some(m => m.name.toLowerCase().includes(keyword)))
   );
 
   renderList(filtered);
