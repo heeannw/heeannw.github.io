@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>작품 상세보기</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="content" class="detail-container">로딩 중...</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("./data/projects.json")
+  .then(res => res.json())
+  .then(projects => {
+    const p = projects.find(x => x.id == id);
+
+    document.title = p.title;
+
+    document.getElementById("content").innerHTML = `
+      <header class="project-header">
+        <div class="project-title-box">
+          <h1 class="project-title">${p.title}</h1>
+          <p class="team-name">${p.team}</p>
+        </div>
+        <a href="index.html" class="back-button">← 목록으로</a>
+      </header>
+
+      <section class="project-image-section">
+        <img src="${p.thumbnail}" class="project-image">
+        <p class="project-description">${p.description}</p>
+      </section>
+
+      <h2 class="section-title">팀원 정보</h2>
+      <section class="members">
+        ${p.members.map(m => `
+          <div class="member-card">
+            <div class="member-overlay">
+              <p class="member-role">
+                <b>${m.name}</b><br>
+                ${m.email || "Email 미제공"}
+              </p>
+            </div>
+          </div>
+        `).join("")}
+      </section>
+
+      <h2 class="section-title">자료 다운로드</h2>
+      <section class="buttons">
+        ${p.ppt ? `<a class="btn" href="${p.ppt}" download>📊 PPT 다운로드</a>` : ""}
+        ${p.report ? `<a class="btn" href="${p.report}" download>📄 보고서 다운로드</a>` : ""}
+        ${p.github ? `<a class="btn" href="${p.github}" target="_blank">💻 GitHub</a>` : ""}
+        ${p.video ? `<a class="btn" href="${p.video}" target="_blank">🎬 시연영상</a>` : ""}
+      </section>
+
+      <footer class="footer">© 2025 한양여자대학교 빅데이터학과</footer>
+    `;
+  });
+</script>
+
+</body>
+</html>
