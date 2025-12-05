@@ -1,210 +1,79 @@
-/* ---------- 기본 설정 ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>작품 상세보기</title>
+<link rel="stylesheet" href="styles.css">
+</head>
 
-body {
-  background: #f4f6fb;
-  color: #222;
-}
+<body>
 
-/* ---------- 헤더 ---------- */
-.header {
-  background: #1e3a8a;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  border-bottom: 5px solid #93c5fd;
-}
+<!-- 상단 헤더 -->
+<div class="detail-header">
+  <h1 id="title" class="detail-title"></h1>
+  <p id="team" class="detail-team"></p>
+  <a href="index.html" class="back-btn">← 목록으로</a>
+</div>
 
-.header h1 {
-  font-size: 34px;
-  font-weight: 800;
-}
+<!-- 본문 -->
+<div class="detail-body">
 
-.subtitle {
-  margin-top: 8px;
-  font-size: 16px;
-  opacity: 0.9;
-}
+  <h2>프로젝트 설명</h2>
+  <p id="desc">등록된 설명이 없습니다.</p>
 
-/* ---------- 검색 & 필터 ---------- */
-.filter-area {
-  max-width: 1100px;
-  margin: 30px auto 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 15px;
-}
+  <h2 style="margin-top:30px;">팀원 정보</h2>
+  <div id="members" class="member-box"></div>
 
-.search-box {
-  flex: 1;
-  min-width: 240px;
-  margin-right: 10px;
-}
+  <h2 style="margin-top:30px;">자료 다운로드</h2>
+  <div id="links" class="downloads"></div>
 
-.search-box input {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  outline: none;
-}
+</div>
 
-.filter-select {
-  width: 160px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
+<footer class="footer">
+  © 2025 HYWU Big Data · Graduation Archive
+</footer>
 
-/* ---------- 카드 ---------- */
-.gallery {
-  max-width: 1100px;
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 22px;
-  padding: 15px;
-}
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = Number(params.get("id"));
 
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: #222;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  transition: 0.2s;
-}
+// JSON 불러오기
+fetch("data/projects.json")
+  .then(res => res.json())
+  .then(data => {
+    const p = data.find(x => x.id === id);
+    if (!p) return;
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
+    // 제목 / 팀명
+    document.getElementById("title").textContent = p.projectTitle;
+    document.getElementById("team").textContent = p.teamName || p.leader;
 
-.card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
+    // 설명
+    document.getElementById("desc").textContent =
+      p.description || "등록된 설명이 없습니다.";
 
-.card .team {
-  opacity: 0.7;
-  font-size: 15px;
-}
+    // 팀원 출력
+    document.getElementById("members").innerHTML = p.members
+      .map(m => `
+        <div class="member-card">
+          <div class="member-name">${m.name}${m.leader ? " (팀장)" : ""}</div>
+          <div class="member-email">${m.email || ""}</div>
+        </div>
+      `)
+      .join("");
 
-/* ---------- DETAIL PAGE ---------- */
+    // 자료 다운로드 출력
+    document.getElementById("links").innerHTML = `
+      ${p.links.ppt ? `<a class="btn-download" href="${p.links.ppt}" target="_blank">📊 PPT 보기</a>` : ""}
+      ${p.links.report ? `<a class="btn-download" href="${p.links.report}" target="_blank">📄 보고서 보기</a>` : ""}
+      ${p.links.github ? `<a class="btn-download" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
+      ${p.links.video ? `<a class="btn-download" href="${p.links.video}" target="_blank">🎬 시연 영상</a>` : ""}
+      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video ? 
+        "<p>등록된 자료가 없습니다.</p>" : ""}
+    `;
+  });
+</script>
 
-.detail-header {
-  background: #1e3a8a;
-  color: white;
-  padding: 40px 20px;
-  position: relative;
-}
-
-.back-btn {
-  position: absolute;
-  right: 20px;
-  top: 40px;
-  background: #60a5fa;
-  padding: 10px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 14px;
-  color: white;
-}
-
-.detail-title {
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.detail-team {
-  margin-top: 5px;
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-.detail-body {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-.member-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.member {
-  width: 160px;
-  background: #eef2ff;
-  padding: 18px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  text-align: center;
-  padding: 25px;
-  background: #1e3a8a;
-  color: white;
-  margin-top: 40px;
-}
-.downloads {
-  margin-top: 40px;
-}
-
-.btn-download {
-  display: inline-block;
-  padding: 10px 16px;
-  margin: 6px 6px 0 0;
-  background: #4a6cf7;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 15px;
-  transition: 0.25s;
-}
-
-.btn-download:hover {
-  background: #0025f5;
-}
-
-.member-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 15px;
-}
-
-.member-card {
-  background: #f4f6ff;
-  border-radius: 12px;
-  padding: 14px 18px;
-  min-width: 150px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.member-name {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.member-email {
-  font-size: 13px;
-  color: #555;
-  word-break: break-all;
-}
-
+</body>
+</html>
