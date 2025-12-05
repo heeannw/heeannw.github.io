@@ -4,7 +4,7 @@
     "teamName": "빵모아",
     "leader": "이민아",
     "members": [
-      { "name": "이민아", "leader": true }
+      { "name": "이민아", "leader": true, "email": "" }
     ],
     "projectTitle": "AI기반 건강 특화 빵집 시스템",
     "class": "A01(하효동P)",
@@ -23,8 +23,8 @@
     "teamName": "",
     "leader": "김성예",
     "members": [
-      { "name": "김성예", "leader": true },
-      { "name": "김민채" }
+      { "name": "김성예", "leader": true, "email": "" },
+      { "name": "김민채", "email": "" }
     ],
     "projectTitle": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
     "class": "A01(하효동P)",
@@ -43,9 +43,9 @@
     "teamName": "",
     "leader": "이진서",
     "members": [
-      { "name": "이진서", "leader": true },
-      { "name": "박하율" },
-      { "name": "권지수" }
+      { "name": "이진서", "leader": true, "email": "" },
+      { "name": "박하율", "email": "" },
+      { "name": "권지수", "email": "" }
     ],
     "projectTitle": "LLM 챗봇 기반 저속노화 식단 제공 시스템",
     "class": "A01(하효동P)",
@@ -64,8 +64,8 @@
     "teamName": "",
     "leader": "김노아",
     "members": [
-      { "name": "김노아", "leader": true },
-      { "name": "김하랑" }
+      { "name": "김노아", "leader": true, "email": "" },
+      { "name": "김하랑", "email": "" }
     ],
     "projectTitle": "트로트의 진화 : 전통과 현대를 잇는 가사와 스타일의 변화",
     "class": "A01(하효동P)",
@@ -84,9 +84,9 @@
     "teamName": "",
     "leader": "",
     "members": [
-      { "name": "이서진" },
-      { "name": "이선화" },
-      { "name": "이하영" }
+      { "name": "이서진", "email": "" },
+      { "name": "이선화", "email": "" },
+      { "name": "이하영", "email": "" }
     ],
     "projectTitle": "한국프로야구 선수정보 AI챗봇제안",
     "class": "A01(하효동P)",
@@ -105,9 +105,9 @@
     "teamName": "김박천국",
     "leader": "박소현",
     "members": [
-      { "name": "박소현", "leader": true },
-      { "name": "김나경" },
-      { "name": "천지수" }
+      { "name": "박소현", "leader": true, "email": "" },
+      { "name": "김나경", "email": "" },
+      { "name": "천지수", "email": "" }
     ],
     "projectTitle": "LLM 기반 지역 전통시장 모바일 앱 프로토타입 구현",
     "class": "A01(하효동P)",
@@ -126,8 +126,8 @@
     "teamName": "On-NURI",
     "leader": "홍수현",
     "members": [
-      { "name": "홍수현", "leader": true },
-      { "name": "김주희" }
+      { "name": "홍수현", "leader": true, "email": "" },
+      { "name": "김주희", "email": "" }
     ],
     "projectTitle": "영유아 Nursing",
     "class": "A01(하효동P)",
@@ -146,10 +146,10 @@
     "teamName": "담다",
     "leader": "박채연",
     "members": [
-      { "name": "박채연", "leader": true },
-      { "name": "윤승혜" },
-      { "name": "이서연" },
-      { "name": "이서정" }
+      { "name": "박채연", "leader": true, "email": "" },
+      { "name": "윤승혜", "email": "" },
+      { "name": "이서연", "email": "" },
+      { "name": "이서정", "email": "" }
     ],
     "projectTitle": "관광 연계형 전통 설화 모바일 앱 서비스 '다담'",
     "class": "A01(하효동P)",
@@ -168,7 +168,7 @@
     "teamName": "",
     "leader": "이유진",
     "members": [
-      { "name": "이유진", "leader": true }
+      { "name": "이유진", "leader": true, "email": "" }
     ],
     "projectTitle": "영화흥행 예측",
     "class": "A02(최성은P)",
@@ -187,7 +187,7 @@
     "teamName": "",
     "leader": "홍예진",
     "members": [
-      { "name": "홍예진", "leader": true }
+      { "name": "홍예진", "leader": true, "email": "" }
     ],
     "projectTitle": "음식주문 앱",
     "class": "A02(최성은P)",
@@ -206,8 +206,8 @@
     "teamName": "어썸온",
     "leader": "윤소은",
     "members": [
-      { "name": "윤소은", "leader": true },
-      { "name": "이수안" }
+      { "name": "윤소은", "leader": true, "email": "" },
+      { "name": "이수안", "email": "" }
     ],
     "projectTitle": "DramaPickers",
     "class": "A02(최성은P)",
@@ -226,8 +226,8 @@
     "teamName": "천지창조",
     "leader": "조나영",
     "members": [
-      { "name": "조나영", "leader": true },
-      { "name": "천지인" }
+      { "name": "조나영", "leader": true, "email": "" },
+      { "name": "천지인", "email": "" }
     ],
     "projectTitle": "단계별 졸음 감지",
     "class": "A02(최성은P)",
@@ -246,8 +246,8 @@
     "teamName": "5조",
     "leader": "이지수",
     "members": [
-      { "name": "이지수", "leader": true },
-      { "name": "정다나" }
+      { "name": "이지수", "leader": true, "email": "" },
+      { "name": "정다나", "email": "" }
     ],
     "projectTitle": "AI 표정인식기",
     "class": "A02(최성은P)",
@@ -266,9 +266,9 @@
     "teamName": "얼굴Pizza",
     "leader": "문예림",
     "members": [
-      { "name": "문예림", "leader": true },
-      { "name": "안시현" },
-      { "name": "윤유지" }
+      { "name": "문예림", "leader": true, "email": "" },
+      { "name": "안시현", "email": "" },
+      { "name": "윤유지", "email": "" }
     ],
     "projectTitle": "인공지능 기반 얼굴인식 출석체크 시스템",
     "class": "A02(최성은P)",
@@ -287,10 +287,10 @@
     "teamName": "JEMS",
     "leader": "최지우",
     "members": [
-      { "name": "최지우", "leader": true },
-      { "name": "이은서" },
-      { "name": "김민후" },
-      { "name": "김수정" }
+      { "name": "최지우", "leader": true, "email": "" },
+      { "name": "이은서", "email": "" },
+      { "name": "김민후", "email": "" },
+      { "name": "김수정", "email": "" }
     ],
     "projectTitle": "인공지능 분리배출 쓰레기통 시스템",
     "class": "A02(최성은P)",
@@ -309,8 +309,8 @@
     "teamName": "F4",
     "leader": "신지윤",
     "members": [
-      { "name": "신지윤", "leader": true },
-      { "name": "박윤아" }
+      { "name": "신지윤", "leader": true, "email": "" },
+      { "name": "박윤아", "email": "" }
     ],
     "projectTitle": "Sencity (도심 야생동물 발견 신고)",
     "class": "A02(최성은P)",
@@ -329,11 +329,11 @@
     "teamName": "SyncView",
     "leader": "조유영",
     "members": [
-      { "name": "조유영", "leader": true },
-      { "name": "박수빈" },
-      { "name": "전애리" },
-      { "name": "조민정" },
-      { "name": "이영지" }
+      { "name": "조유영", "leader": true, "email": "" },
+      { "name": "박수빈", "email": "" },
+      { "name": "전애리", "email": "" },
+      { "name": "조민정", "email": "" },
+      { "name": "이영지", "email": "" }
     ],
     "projectTitle": "AI 기반 뉴스 요약 / 반응 분석 플랫폼",
     "class": "B01(서만석P)",
@@ -375,11 +375,11 @@
     "teamName": "WAVIEW 웨이뷰",
     "leader": "원희",
     "members": [
-      { "name": "원희", "leader": true },
-      { "name": "윤서연" },
-      { "name": "이예린" },
-      { "name": "정수연" },
-      { "name": "김빈나" }
+      { "name": "원희", "leader": true, "email": "" },
+      { "name": "윤서연", "email": "" },
+      { "name": "이예린", "email": "" },
+      { "name": "정수연", "email": "" },
+      { "name": "김빈나", "email": "" }
     ],
     "projectTitle": "사용자 맞춤형 심리케어 & 챗봇 AnOn",
     "class": "B01(서만석P)",
@@ -398,10 +398,10 @@
     "teamName": "이음",
     "leader": "김나연",
     "members": [
-      { "name": "김나연", "leader": true },
-      { "name": "이혜민" },
-      { "name": "김수향" },
-      { "name": "김혜원" }
+      { "name": "김나연", "leader": true, "email": "" },
+      { "name": "이혜민", "email": "" },
+      { "name": "김수향", "email": "" },
+      { "name": "김혜원", "email": "" }
     ],
     "projectTitle": "또래 멘토링 , 고령층 학습 효율",
     "class": "B02(황철현P)",
@@ -420,10 +420,10 @@
     "teamName": "GS100",
     "leader": "조민서",
     "members": [
-      { "name": "조민서", "leader": true },
-      { "name": "윤서영" },
-      { "name": "이유진" },
-      { "name": "이영주" }
+      { "name": "조민서", "leader": true, "email": "" },
+      { "name": "윤서영", "email": "" },
+      { "name": "이유진", "email": "" },
+      { "name": "이영주", "email": "" }
     ],
     "projectTitle": "데이터 기반 지역 축제 성공 예측 및 요인 분석",
     "class": "B02(황철현P)",
