@@ -38,9 +38,10 @@ fetch("./data/projects.json")
       </header>
 
       <section class="project-image-section">
-        <img src="${p.thumbnail}" class="project-image">
+        <img src="${p.thumbnail || 'assets/thumbnails/default.jpg'}" class="project-image">
         <p class="project-description">${p.description || "등록된 설명이 없습니다."}</p>
       </section>
+
 
       <h2 class="section-title">팀원 정보</h2>
       <section class="members">
