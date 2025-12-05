@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>작품 상세보기</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-<div id="content" class="detail-container">로딩 중...</div>
+
+<header class="header project-header">
+    <h1 id="title">제목</h1>
+    <p id="team" class="team"></p>
+    <a href="index.html" class="back-btn">← 목록으로</a>
+</header>
+
+<section class="content">
+
+    <h2>작품 설명</h2>
+    <p id="description">등록된 설명이 없습니다.</p>
+
+    <h2>팀원 정보</h2>
+    <div id="members" class="member-list"></div>
+
+    <h2>자료 다운로드</h2>
+    <div id="links" class="download-list"></div>
+
+</section>
+
+<footer class="footer">© 2025 HYWU Big Data · Graduation Archive</footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
@@ -16,62 +36,35 @@ const id = params.get("id");
 
 fetch("data/projects.json")
   .then(res => res.json())
-  .then(projects => {
-    const p = projects.find(x => x.id == id);
+  .then(list => {
+    const p = list.find(item => item.id == id);
+    if (!p) return;
 
-    document.title = p.title;
+    document.getElementById("title").innerText = p.projectTitle;
+    document.getElementById("team").innerText = p.teamName || p.leader || "";
 
-    document.getElementById("content").innerHTML = `
-      <header class="project-header">
-        <div class="project-title-box">
-          <h1 class="project-title">${p.title}</h1>
-          <p class="team-name">${p.team}</p>
-        </div>
-        <a href="index.html" class="back-button">← 목록으로</a>
-      </header>
+    document.getElementById("description").innerText =
+      p.description && p.description.trim() !== "" ?
+      p.description : "등록된 설명이 없습니다.";
 
-      <section class="project-image-section">
-        <p class="project-description">${p.description || "등록된 설명이 없습니다."}</p>
-      </section>
+    // 팀원 출력
+    const members = document.getElementById("members");
+    members.innerHTML = p.members.map(m => `
+      <div class="member-box">
+        <p>${m.name}${m.leader ? " (팀장)" : ""}</p>
+      </div>
+    `).join("");
 
-      <h2 class="section-title">팀원 정보</h2>
-      <section class="members">
-        ${
-          p.members.length
-            ? p.members
-                .map(
-                  (m) => `
-          <div class="member-card no-photo">
-            <div class="member-overlay always">
-              <p class="member-role">
-                <b>${m.name}</b><br>
-                ${m.email ? m.email : ""}
-              </p>
-            </div>
-          </div>`
-                )
-                .join("")
-            : "<p>등록된 팀원 정보가 없습니다.</p>"
-        }
-      </section>
+    // 자료 링크 출력
+    const links = document.getElementById("links");
+    let linkHTML = "";
 
-      <h2 class="section-title">자료 다운로드</h2>
-      <section class="buttons">
-        ${p.ppt ? `<a class="btn" href="${p.ppt}" download>📊 발표자료</a>` : ""}
-        ${p.report ? `<a class="btn" href="${p.report}" download>📄 보고서</a>` : ""}
-        ${p.github ? `<a class="btn" href="${p.github}" target="_blank">💻 GitHub</a>` : ""}
-        ${p.video ? `<a class="btn" href="${p.video}" target="_blank">🎬 시연영상</a>` : ""}
-        ${
-          !p.ppt && !p.report && !p.github && !p.video
-            ? "<p>등록된 자료가 없습니다.</p>"
-            : ""
-        }
-      </section>
+    if (p.links.ppt) linkHTML += `<a href="${p.links.ppt}" class="btn" target="_blank">📊 PPT 다운로드</a>`;
+    if (p.links.report) linkHTML += `<a href="${p.links.report}" class="btn" target="_blank">📄 보고서 다운로드</a>`;
+    if (p.links.github) linkHTML += `<a href="${p.links.github}" class="btn" target="_blank">💻 GitHub</a>`;
+    if (p.links.video) linkHTML += `<a href="${p.links.video}" class="btn" target="_blank">🎬 시연 영상</a>`;
 
-      <footer class="footer">
-        © 2025 HYWU Big Data · Graduation Archive
-      </footer>
-    `;
+    links.innerHTML = linkHTML || "등록된 자료가 없습니다.";
   });
 </script>
 
