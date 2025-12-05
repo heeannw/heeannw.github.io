@@ -20,20 +20,26 @@ fetch("./data/projects.json")
   .then(projects => {
     const p = projects.find(x => x.id == id);
 
-    document.title = p.title;
+    if (!p) {
+      document.getElementById("content").innerHTML = "<p>프로젝트 정보를 불러올 수 없습니다.</p>";
+      return;
+    }
+
+    document.title = p.projectTitle;
 
     document.getElementById("content").innerHTML = `
       <header class="project-header">
         <div class="project-title-box">
-          <h1 class="project-title">${p.title}</h1>
-          <p class="team-name">${p.team}</p>
+          <h1 class="project-title">${p.projectTitle}</h1>
+          <p class="team-name">${p.teamName || "(팀 이름 없음)"}</p>
+          <p class="class-info">${p.class}</p>
         </div>
         <a href="index.html" class="back-button">← 목록으로</a>
       </header>
 
       <section class="project-image-section">
         <img src="${p.thumbnail}" class="project-image">
-        <p class="project-description">${p.description}</p>
+        <p class="project-description">${p.description || "등록된 설명이 없습니다."}</p>
       </section>
 
       <h2 class="section-title">팀원 정보</h2>
@@ -43,6 +49,7 @@ fetch("./data/projects.json")
             <div class="member-overlay">
               <p class="member-role">
                 <b>${m.name}</b><br>
+                ${m.leader ? "(팀장)" : ""}<br>
                 ${m.email || "Email 미제공"}
               </p>
             </div>
@@ -52,10 +59,10 @@ fetch("./data/projects.json")
 
       <h2 class="section-title">자료 다운로드</h2>
       <section class="buttons">
-        ${p.ppt ? `<a class="btn" href="${p.ppt}" download>📊 PPT 다운로드</a>` : ""}
-        ${p.report ? `<a class="btn" href="${p.report}" download>📄 보고서 다운로드</a>` : ""}
-        ${p.github ? `<a class="btn" href="${p.github}" target="_blank">💻 GitHub</a>` : ""}
-        ${p.video ? `<a class="btn" href="${p.video}" target="_blank">🎬 시연영상</a>` : ""}
+        ${p.links.ppt ? `<a class="btn" href="${p.links.ppt}" download>📊 발표자료(PPT/PDF)</a>` : ""}
+        ${p.links.report ? `<a class="btn" href="${p.links.report}" download>📄 보고서</a>` : ""}
+        ${p.links.github ? `<a class="btn" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
+        ${p.links.video ? `<a class="btn" href="${p.links.video}" target="_blank">🎬 시연영상</a>` : ""}
       </section>
 
       <footer class="footer">© 2025 한양여자대학교 빅데이터학과</footer>
