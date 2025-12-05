@@ -4,7 +4,7 @@
     "teamName": "빵모아",
     "leader": "이민아",
     "members": [
-      {"name": "이민아", "email": "", "leader": true}
+      { "name": "이민아", "email": "", "leader": true }
     ],
     "projectTitle": "AI기반 건강 특화 빵집 시스템",
     "class": "A01(하효동P)",
@@ -17,8 +17,8 @@
     "teamName": "",
     "leader": "김성예",
     "members": [
-      {"name": "김성예", "email": "", "leader": true},
-      {"name": "김민채", "email": "", "leader": false}
+      { "name": "김성예", "email": "", "leader": true },
+      { "name": "김민채", "email": "", "leader": false }
     ],
     "projectTitle": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
     "class": "A01(하효동P)",
@@ -85,6 +85,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 7,
     "teamName": "On-NURI",
@@ -99,6 +100,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 8,
     "teamName": "담다",
@@ -114,6 +116,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 9,
     "teamName": "",
@@ -127,6 +130,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 10,
     "teamName": "",
@@ -140,6 +144,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 11,
     "teamName": "어썸온",
@@ -155,6 +160,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 12,
     "teamName": "천지창조",
@@ -170,6 +176,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 13,
     "teamName": "5조",
@@ -185,6 +192,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 14,
     "teamName": "얼굴Pizza",
@@ -199,6 +207,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 15,
     "teamName": "JEMS",
@@ -213,6 +222,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 16,
     "teamName": "F4",
@@ -229,6 +239,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 17,
     "teamName": "SyncView",
@@ -244,6 +255,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 18,
     "teamName": "OMG",
@@ -259,6 +271,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 19,
     "teamName": "WAVIEW 웨이뷰",
@@ -274,6 +287,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 20,
     "teamName": "이음",
@@ -288,6 +302,7 @@
     "description": "",
     "thumbnail": "assets/projects/default.jpg"
   },
+
   {
     "id": 21,
     "teamName": "GS100",
