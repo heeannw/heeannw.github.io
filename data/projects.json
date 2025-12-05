@@ -8,7 +8,9 @@
     ],
     "projectTitle": "AI기반 건강 특화 빵집 시스템",
     "class": "A01(하효동P)",
-    "links": {},
+    "links": {
+      "ppt" : "data/1_빵모아.pdf"
+    },
     "description": ""
   },
   {
