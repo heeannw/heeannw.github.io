@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>작품 상세보기</title>
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="header project-header">
-    <h1 id="title">제목</h1>
-    <p id="team" class="team"></p>
-    <a href="index.html" class="back-btn">← 목록으로</a>
-</header>
+<div class="detail-header">
+  <h1 id="title" class="detail-title"></h1>
+  <p id="team" class="detail-team"></p>
+  <a href="index.html" class="back-btn">← 목록으로</a>
+</div>
 
-<section class="content">
+<div class="detail-body">
+  <h2>프로젝트 설명</h2>
+  <p id="desc">등록된 설명이 없습니다.</p>
 
-    <h2>작품 설명</h2>
-    <p id="description">등록된 설명이 없습니다.</p>
+  <h2 style="margin-top:30px;">팀원 정보</h2>
+  <div id="members" class="member-box"></div>
 
-    <h2>팀원 정보</h2>
-    <div id="members" class="member-list"></div>
-
-    <h2>자료 다운로드</h2>
-    <div id="links" class="download-list"></div>
-
-</section>
+  <h2 style="margin-top:30px;">자료 다운로드</h2>
+  <div id="links"></div>
+</div>
 
 <footer class="footer">© 2025 HYWU Big Data · Graduation Archive</footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = Number(params.get("id"));
 
 fetch("data/projects.json")
   .then(res => res.json())
   .then(list => {
-    const p = list.find(item => item.id == id);
-    if (!p) return;
+    const p = list.find(x => x.id === id);
 
-    document.getElementById("title").innerText = p.projectTitle;
-    document.getElementById("team").innerText = p.teamName || p.leader || "";
+    document.getElementById("title").textContent = p.projectTitle;
+    document.getElementById("team").textContent = p.teamName || p.leader;
 
-    document.getElementById("description").innerText =
-      p.description && p.description.trim() !== "" ?
-      p.description : "등록된 설명이 없습니다.";
+    document.getElementById("desc").textContent =
+      p.description || "등록된 설명이 없습니다.";
 
-    // 팀원 출력
-    const members = document.getElementById("members");
-    members.innerHTML = p.members.map(m => `
-      <div class="member-box">
-        <p>${m.name}${m.leader ? " (팀장)" : ""}</p>
-      </div>
-    `).join("");
+    document.getElementById("members").innerHTML = p.members
+      .map(m => `<div class="member">${m.name}</div>`)
+      .join("");
 
-    // 자료 링크 출력
-    const links = document.getElementById("links");
-    let linkHTML = "";
-
-    if (p.links.ppt) linkHTML += `<a href="${p.links.ppt}" class="btn" target="_blank">📊 PPT 다운로드</a>`;
-    if (p.links.report) linkHTML += `<a href="${p.links.report}" class="btn" target="_blank">📄 보고서 다운로드</a>`;
-    if (p.links.github) linkHTML += `<a href="${p.links.github}" class="btn" target="_blank">💻 GitHub</a>`;
-    if (p.links.video) linkHTML += `<a href="${p.links.video}" class="btn" target="_blank">🎬 시연 영상</a>`;
-
-    links.innerHTML = linkHTML || "등록된 자료가 없습니다.";
+    document.getElementById("links").innerHTML = `
+      ${p.links.ppt ? `<a href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
+      ${p.links.report ? `<a href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
+      ${p.links.github ? `<a href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
+      ${p.links.video ? `<a href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : ""}
+      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video ? 
+        "등록된 자료가 없습니다." : ""}
+    `;
   });
 </script>
 
