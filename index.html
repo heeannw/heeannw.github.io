@@ -29,7 +29,7 @@ fetch("data/projects.json")
       <a href="project.html?id=${p.id}" class="card">
         <div class="card-content">
           <h3>${p.title}</h3>
-          <p class="team">${p.team}</p>
+          <p class="team">${p.teamName || p.leader || ""}</p>
         </div>
       </a>
     `
