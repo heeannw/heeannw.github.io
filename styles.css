@@ -1,79 +1,132 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>작품 상세보기</title>
-<link rel="stylesheet" href="styles.css">
-</head>
+/* -------------------- 기본 -------------------- */
+body {
+  background: #f5f7fb;
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  color: #222;
+}
 
-<body>
+/* -------------------- 상세 헤더 -------------------- */
+.detail-header {
+  background: #1e3a8a;
+  color: white;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-<!-- 상단 헤더 -->
-<div class="detail-header">
-  <h1 id="title" class="detail-title"></h1>
-  <p id="team" class="detail-team"></p>
-  <a href="index.html" class="back-btn">← 목록으로</a>
-</div>
+.detail-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
 
-<!-- 본문 -->
-<div class="detail-body">
+.detail-team {
+  opacity: 0.9;
+  font-size: 16px;
+}
 
-  <h2>프로젝트 설명</h2>
-  <p id="desc">등록된 설명이 없습니다.</p>
+.back-btn {
+  background: #60a5fa;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-  <h2 style="margin-top:30px;">팀원 정보</h2>
-  <div id="members" class="member-box"></div>
+/* -------------------- 본문 -------------------- */
+.detail-body {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-  <h2 style="margin-top:30px;">자료 다운로드</h2>
-  <div id="links" class="downloads"></div>
+.section {
+  margin-bottom: 50px;
+}
 
-</div>
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
 
-<footer class="footer">
-  © 2025 HYWU Big Data · Graduation Archive
-</footer>
+/* -------------------- 설명 -------------------- */
+.description {
+  line-height: 1.6;
+  color: #444;
+}
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = Number(params.get("id"));
+/* -------------------- 팀원 카드 -------------------- */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
 
-// JSON 불러오기
-fetch("data/projects.json")
-  .then(res => res.json())
-  .then(data => {
-    const p = data.find(x => x.id === id);
-    if (!p) return;
+.member-card {
+  background: white;
+  border: 1px solid #e6e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
 
-    // 제목 / 팀명
-    document.getElementById("title").textContent = p.projectTitle;
-    document.getElementById("team").textContent = p.teamName || p.leader;
+.member-name {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
 
-    // 설명
-    document.getElementById("desc").textContent =
-      p.description || "등록된 설명이 없습니다.";
+.leader-tag {
+  font-size: 12px;
+  background: #2563eb;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
 
-    // 팀원 출력
-    document.getElementById("members").innerHTML = p.members
-      .map(m => `
-        <div class="member-card">
-          <div class="member-name">${m.name}${m.leader ? " (팀장)" : ""}</div>
-          <div class="member-email">${m.email || ""}</div>
-        </div>
-      `)
-      .join("");
+.member-email {
+  font-size: 13px;
+  color: #555;
+  word-break: break-all;
+}
 
-    // 자료 다운로드 출력
-    document.getElementById("links").innerHTML = `
-      ${p.links.ppt ? `<a class="btn-download" href="${p.links.ppt}" target="_blank">📊 PPT 보기</a>` : ""}
-      ${p.links.report ? `<a class="btn-download" href="${p.links.report}" target="_blank">📄 보고서 보기</a>` : ""}
-      ${p.links.github ? `<a class="btn-download" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
-      ${p.links.video ? `<a class="btn-download" href="${p.links.video}" target="_blank">🎬 시연 영상</a>` : ""}
-      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video ? 
-        "<p>등록된 자료가 없습니다.</p>" : ""}
-    `;
-  });
-</script>
+/* -------------------- 다운로드 -------------------- */
+.download-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-</body>
-</html>
+.download-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+.blue { background: #2563eb; }
+.green { background: #059669; }
+.dark { background: #111827; }
+.purple { background: #7c3aed; }
+
+.download-btn:hover {
+  opacity: 0.85;
+}
+
+/* -------------------- footer -------------------- */
+.footer {
+  background: #1e3a8a;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+}
