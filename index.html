@@ -18,23 +18,19 @@
 
 <script>
 fetch("data/projects.json")
-  .then((res) => res.json())
-  .then((list) => {
+  .then(res => res.json())
+  .then(list => {
     const gallery = document.getElementById("gallery");
     gallery.classList.remove("loading");
 
-    gallery.innerHTML = list
-      .map(
-        (p) => `
+    gallery.innerHTML = list.map(p => `
       <a href="project.html?id=${p.id}" class="card">
         <div class="card-content">
-          <h3>${p.title}</h3>
-          <p class="team">${p.teamName || p.leader || ""}</p>
+          <h3>${p.projectTitle}</h3>
+          <p class="team">${p.teamName ? p.teamName : p.leader}</p>
         </div>
       </a>
-    `
-      )
-      .join("");
+    `).join("");
   });
 </script>
 
