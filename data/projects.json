@@ -361,8 +361,8 @@
     "projectTitle": "Zarit (지하철 좌석 공유 앱)",
     "class": "B01(서만석P)",
     "links": {
-      "ppt": "data/ppt/18_OMG.pdf",
-      "report": "data/report/18_OMG.pdf",
+      "ppt": "/data/ppt/18_OMG.pdf",
+      "report": "/data/report/18_OMG.pdf",
       "video": "https://www.youtube.com/shorts/WLfL37Kn3IE",
       "github": "https://github.com/choisuvin/zariit.git"
     },
