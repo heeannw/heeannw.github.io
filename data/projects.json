@@ -1,1 +1,38 @@
-
+[
+  {
+    "id": 1,
+    "class": "A01(하효동P)",
+    "team": "빵모아(이민아)",
+    "title": "AI기반 건강 특화 빵집 시스템",
+    "members": [],
+    "description": "",
+    "ppt": "",
+    "report": "",
+    "github": "",
+    "video": ""
+  },
+  {
+    "id": 2,
+    "class": "A01(하효동P)",
+    "team": "(김성예), 김민채",
+    "title": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
+    "members": [],
+    "description": "",
+    "ppt": "",
+    "report": "",
+    "github": "",
+    "video": ""
+  },
+  {
+    "id": 3,
+    "class": "A01(하효동P)",
+    "team": "(이진서), 박하율, 권지수",
+    "title": "LLM 챗봇 기반 저속노화 식단 제공 시스템",
+    "members": [],
+    "description": "",
+    "ppt": "",
+    "report": "",
+    "github": "",
+    "video": ""
+  }
+]
