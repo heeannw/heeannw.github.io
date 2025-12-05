@@ -14,24 +14,71 @@
     <p class="subtitle">Hanyang Women's University · Big Data</p>
 </header>
 
-<section id="gallery" class="gallery loading">로딩 중...</section>
+<!-- 검색 + 필터 영역 -->
+<div class="filter-area">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="검색: 프로젝트명, 팀명, 팀원…" />
+    </div>
+
+    <select id="filterClass" class="filter-select">
+        <option value="all">전체</option>
+        <option value="A01">A01</option>
+        <option value="A02">A02</option>
+        <option value="B01">B01</option>
+        <option value="B02">B02</option>
+    </select>
+</div>
+
+<section id="gallery" class="gallery">로딩 중...</section>
 
 <script>
+let rawData = [];
+
+// JSON 로드
 fetch("data/projects.json")
   .then(res => res.json())
-  .then(list => {
-    const gallery = document.getElementById("gallery");
-    gallery.classList.remove("loading");
-
-    gallery.innerHTML = list.map(p => `
-      <a href="project.html?id=${p.id}" class="card">
-        <div class="card-content">
-          <h3>${p.projectTitle}</h3>
-          <p class="team">${p.teamName ? p.teamName : p.leader}</p>
-        </div>
-      </a>
-    `).join("");
+  .then(data => {
+    rawData = data;
+    renderList(data);
   });
+
+// 카드 렌더링 함수
+function renderList(list) {
+  const gallery = document.getElementById("gallery");
+
+  gallery.innerHTML = list
+    .map(
+      p => `
+      <a href="project.html?id=${p.id}" class="card">
+        <h3>${p.projectTitle}</h3>
+        <p class="team">${p.teamName || p.leader}</p>
+      </a>`
+    )
+    .join("");
+}
+
+// 🔍 검색 기능
+document.getElementById("searchInput").addEventListener("input", function () {
+  const keyword = this.value.toLowerCase();
+
+  const filtered = rawData.filter(p =>
+    p.projectTitle.toLowerCase().includes(keyword) ||
+    (p.teamName && p.teamName.toLowerCase().includes(keyword)) ||
+    p.members.some(m => m.name.toLowerCase().includes(keyword))
+  );
+
+  renderList(filtered);
+});
+
+// 📌 반별 필터 기능
+document.getElementById("filterClass").addEventListener("change", function () {
+  const value = this.value;
+
+  if (value === "all") return renderList(rawData);
+
+  const filtered = rawData.filter(p => p.class.includes(value));
+  renderList(filtered);
+});
 </script>
 
 <footer class="footer">
