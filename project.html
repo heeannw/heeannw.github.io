@@ -44,8 +44,14 @@ fetch("data/projects.json")
       p.description || "등록된 설명이 없습니다.";
 
     document.getElementById("members").innerHTML = p.members
-      .map(m => `<div class="member">${m.name}</div>`)
-      .join("");
+      .map(m => `
+      <div class="member">
+        <strong>${m.name}</strong>
+        ${m.email ? `<br><span class="email">${m.email}</span>` : ""}
+      </div>
+    `)
+    .join("");
+
 
     document.getElementById("links").innerHTML = `
       ${p.links.ppt ? `<a href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
