@@ -9,64 +9,54 @@
 
 <body>
 
-<div id="content" class="detail-container">로딩 중...</div>
+<div class="detail-header">
+  <h1 id="title" class="detail-title"></h1>
+  <p id="team" class="detail-team"></p>
+  <a href="index.html" class="back-btn">← 목록으로</a>
+</div>
+
+<div class="detail-body">
+  <h2>프로젝트 설명</h2>
+  <p id="desc">등록된 설명이 없습니다.</p>
+
+  <h2 style="margin-top:30px;">팀원 정보</h2>
+  <div id="members" class="member-box"></div>
+
+  <h2 style="margin-top:30px;">자료 다운로드</h2>
+  <div id="links" class="downloads"></div>
+</div>
+
+<footer class="footer">© 2025 HYWU Big Data · Graduation Archive</footer>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = Number(new URLSearchParams(location.search).get("id"));
 
-fetch("./data/projects.json")
+fetch("data/projects.json")
   .then(res => res.json())
-  .then(projects => {
-    const p = projects.find(x => x.id == id);
+  .then(data => {
+    const p = data.find(x => x.id === id);
+    if (!p) return;
 
-    if (!p) {
-      document.getElementById("content").innerHTML = "<p>프로젝트 정보를 불러올 수 없습니다.</p>";
-      return;
-    }
+    document.getElementById("title").textContent = p.projectTitle;
+    document.getElementById("team").textContent = p.teamName || p.leader;
 
-    document.title = p.projectTitle;
+    document.getElementById("desc").textContent =
+      p.description || "등록된 설명이 없습니다.";
 
-    document.getElementById("content").innerHTML = `
-      <header class="project-header">
-        <div class="project-title-box">
-          <h1 class="project-title">${p.projectTitle}</h1>
-          <p class="team-name">${p.teamName || "(팀 이름 없음)"}</p>
-          <p class="class-info">${p.class}</p>
+    document.getElementById("members").innerHTML = p.members
+      .map(m => `
+        <div class="member-card">
+          <div class="member-name">${m.name}${m.leader ? " (팀장)" : ""}</div>
+          <div class="member-email">${m.email || ""}</div>
         </div>
-        <a href="index.html" class="back-button">← 목록으로</a>
-      </header>
+      `)
+      .join("");
 
-      <section class="project-image-section">
-        <img src="${p.thumbnail || 'assets/thumbnails/default.jpg'}" class="project-image">
-        <p class="project-description">${p.description || "등록된 설명이 없습니다."}</p>
-      </section>
-
-
-      <h2 class="section-title">팀원 정보</h2>
-      <section class="members">
-        ${p.members.map(m => `
-          <div class="member-card">
-            <div class="member-overlay">
-              <p class="member-role">
-                <b>${m.name}</b><br>
-                ${m.leader ? "(팀장)" : ""}<br>
-                ${m.email || "Email 미제공"}
-              </p>
-            </div>
-          </div>
-        `).join("")}
-      </section>
-
-      <h2 class="section-title">자료 다운로드</h2>
-      <section class="buttons">
-        ${p.links.ppt ? `<a class="btn" href="${p.links.ppt}" download>📊 발표자료(PPT/PDF)</a>` : ""}
-        ${p.links.report ? `<a class="btn" href="${p.links.report}" download>📄 보고서</a>` : ""}
-        ${p.links.github ? `<a class="btn" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
-        ${p.links.video ? `<a class="btn" href="${p.links.video}" target="_blank">🎬 시연영상</a>` : ""}
-      </section>
-
-      <footer class="footer">© 2025 한양여자대학교 빅데이터학과</footer>
+    document.getElementById("links").innerHTML = `
+      ${p.links.ppt ? `<a class="btn-download" href="${p.links.ppt}" target="_blank">📊 PPT 보기</a>` : ""}
+      ${p.links.report ? `<a class="btn-download" href="${p.links.report}" target="_blank">📄 보고서 보기</a>` : ""}
+      ${p.links.github ? `<a class="btn-download" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
+      ${p.links.video ? `<a class="btn-download" href="${p.links.video}" target="_blank">🎬 시연 영상</a>` : ""}
     `;
   });
 </script>
