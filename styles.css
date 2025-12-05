@@ -122,6 +122,12 @@ body {
   opacity: 0.85;
 }
 
+/*파란밑줄없애보겟슨*/
+.download-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* -------------------- footer -------------------- */
 .footer {
   background: #1e3a8a;

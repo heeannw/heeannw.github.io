@@ -53,11 +53,13 @@ fetch("data/projects.json")
     .join("");
 
 
+    /* style.css에 만들어둔 download-link 클래스 사용햇슴요 
+    밑줄 없이 쓰고싶으면 저거 가져다가 클래스 지정해두면댈듯 */
     document.getElementById("links").innerHTML = `
-      ${p.links.ppt ? `<a href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
-      ${p.links.report ? `<a href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
-      ${p.links.github ? `<a href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
-      ${p.links.video ? `<a href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : ""}
+      ${p.links.ppt ? `<a class = "download-link" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
+      ${p.links.report ? `<a class = "download-link" href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
+      ${p.links.github ? `<a class = "download-link" href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
+      ${p.links.video ? `<a class = "download-link" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : ""}
       ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video ? 
         "등록된 자료가 없습니다." : ""}
     `;
