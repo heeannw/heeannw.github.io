@@ -9,10 +9,15 @@
     "projectTitle": "AI기반 건강 특화 빵집 시스템",
     "class": "A01(하효동P)",
     "links": {
-      "ppt" : "data/1_빵모아.pdf"
+      "ppt": "data/ppt/1_빵모아.pdf",
+      "report": "",
+      "github": "",
+      "video": ""
     },
-    "description": ""
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 2,
     "teamName": "",
@@ -23,9 +28,16 @@
     ],
     "projectTitle": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 3,
     "teamName": "",
@@ -37,9 +49,16 @@
     ],
     "projectTitle": "LLM 챗봇 기반 저속노화 식단 제공 시스템",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "data/report/3_저속노화.pdf",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 4,
     "teamName": "",
@@ -50,9 +69,16 @@
     ],
     "projectTitle": "트로트의 진화 : 전통과 현대를 잇는 가사와 스타일의 변화",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "data/report/4_트로트.pdf",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 5,
     "teamName": "",
@@ -64,9 +90,16 @@
     ],
     "projectTitle": "한국프로야구 선수정보 AI챗봇제안",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "data/report/5_야구챗봇.pdf",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 6,
     "teamName": "김박천국",
@@ -78,9 +111,16 @@
     ],
     "projectTitle": "LLM 기반 지역 전통시장 모바일 앱 프로토타입 구현",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "data/ppt/6_김박천국.pdf",
+      "report": "data/report/6_김박천국.pdf",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 7,
     "teamName": "On-NURI",
@@ -91,9 +131,16 @@
     ],
     "projectTitle": "영유아 Nursing",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "data/ppt/7_OnNURI.pdf",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 8,
     "teamName": "담다",
@@ -106,9 +153,16 @@
     ],
     "projectTitle": "관광 연계형 전통 설화 모바일 앱 서비스 '다담'",
     "class": "A01(하효동P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "data/report/8_다담.pdf",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 9,
     "teamName": "",
@@ -118,9 +172,16 @@
     ],
     "projectTitle": "영화흥행 예측",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 10,
     "teamName": "",
@@ -130,9 +191,16 @@
     ],
     "projectTitle": "음식주문 앱",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 11,
     "teamName": "어썸온",
@@ -143,9 +211,16 @@
     ],
     "projectTitle": "DramaPickers",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 12,
     "teamName": "천지창조",
@@ -156,9 +231,16 @@
     ],
     "projectTitle": "단계별 졸음 감지",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 13,
     "teamName": "5조",
@@ -169,9 +251,16 @@
     ],
     "projectTitle": "AI 표정인식기",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 14,
     "teamName": "얼굴Pizza",
@@ -183,9 +272,16 @@
     ],
     "projectTitle": "인공지능 기반 얼굴인식 출석체크 시스템",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 15,
     "teamName": "JEMS",
@@ -198,9 +294,16 @@
     ],
     "projectTitle": "인공지능 분리배출 쓰레기통 시스템",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 16,
     "teamName": "F4",
@@ -211,9 +314,16 @@
     ],
     "projectTitle": "Sencity (도심 야생동물 발견 신고)",
     "class": "A02(최성은P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 17,
     "teamName": "SyncView",
@@ -227,9 +337,16 @@
     ],
     "projectTitle": "AI 기반 뉴스 요약 / 반응 분석 플랫폼",
     "class": "B01(서만석P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 18,
     "teamName": "OMG",
@@ -249,9 +366,10 @@
       "video": "https://www.youtube.com/shorts/WLfL37Kn3IE",
       "github": "https://github.com/choisuvin/zariit.git"
     },
-    "description": ""
+    "description": "",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 19,
     "teamName": "WAVIEW 웨이뷰",
@@ -263,11 +381,18 @@
       { "name": "정수연" },
       { "name": "김빈나" }
     ],
-    "projectTitle": "사용자 맞춤형 심리케어 & 챗봇\"AnOn\"",
+    "projectTitle": "사용자 맞춤형 심리케어 & 챗봇 AnOn",
     "class": "B01(서만석P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 20,
     "teamName": "이음",
@@ -280,9 +405,16 @@
     ],
     "projectTitle": "또래 멘토링 , 고령층 학습 효율",
     "class": "B02(황철현P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   },
+
   {
     "id": 21,
     "teamName": "GS100",
@@ -295,7 +427,13 @@
     ],
     "projectTitle": "데이터 기반 지역 축제 성공 예측 및 요인 분석",
     "class": "B02(황철현P)",
-    "links": {},
-    "description": ""
+    "links": {
+      "ppt": "",
+      "report": "",
+      "github": "",
+      "video": ""
+    },
+    "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
   }
 ]
