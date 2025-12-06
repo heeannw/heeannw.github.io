@@ -375,19 +375,20 @@
     "teamName": "WAVIEW 웨이뷰",
     "leader": "원희",
     "members": [
-      { "name": "원희", "leader": true, "email": "" },
-      { "name": "윤서연", "email": "" },
-      { "name": "이예린", "email": "" },
-      { "name": "정수연", "email": "" },
-      { "name": "김빈나", "email": "" }
+      { "name": "원희", "leader": true, "email": "wonhee5435@naver.com" },
+      { "name": "윤서연", "email": "mally1103@naver.com" },
+      { "name": "이예린", "email": "iy833035@gmail.com" },
+      { "name": "정수연", "email": "sooyeonss419@gmail.com" },
+      { "name": "김빈나", "email": "kimbinna20@gmail.com" }
     ],
     "projectTitle": "사용자 맞춤형 심리케어 & 챗봇 AnOn",
     "class": "B01(서만석P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "/data/ppt/19_WAVIEW._PPTpdf.pdf",
+      "report": "/data/report/19_WAVIEW.pdf",
+      "github": "https://github.com/heeannw/AnOn.git",
+      "video": "/data/video/19_WAVIEW._1.mp4"
+      "video": "/data/video/19_WAVIEW._2.mp4"
     },
     "description": "",
     "thumbnail": "assets/thumbnails/default.jpg"
