@@ -16,14 +16,19 @@
 </div>
 
 <div class="detail-body">
+  
+  <!-- 프로젝트 설명 -->
   <h2>프로젝트 설명</h2>
   <p id="desc">등록된 설명이 없습니다.</p>
 
+  <!-- 팀원 -->
   <h2 style="margin-top:30px;">팀원 정보</h2>
   <div id="members" class="member-box"></div>
 
+  <!-- 자료 다운로드 -->
   <h2 style="margin-top:30px;">자료 다운로드</h2>
   <div id="links" class="download-grid"></div>
+
 </div>
 
 <footer class="footer">© 2025 HYWU Big Data · Graduation Archive</footer>
@@ -39,48 +44,39 @@ fetch("data/projects.json")
 
     document.getElementById("title").textContent = p.projectTitle;
     document.getElementById("team").textContent = p.teamName || p.leader;
-
     document.getElementById("desc").textContent =
       p.description || "등록된 설명이 없습니다.";
 
-    /* document.getElementById("members").innerHTML = p.members
-      .map(m => `
-      <div class="member">
-        <strong>(${m.name})</strong>
-        ${m.email ? `<span class="email">${m.email}</span>` : ""}
-      </div>
-    `)
-    .join(""); */
-
-    /*위에 주석 아래 내용으로 고침*/
+    /* 팀원 정보 출력 */
     document.getElementById("members").innerHTML = `
-  <div class="member-grid">
-    ${
-      p.members.map(m => `
-        <div class="member-card"> <!-- 카드 스타일 적용 -->
-          <p class="member-name"> <!-- 이름 스타일 적용 -->
-            ${m.name}
-            ${m.leader ? `<span class="leader-tag">팀장</span>` : ""}
-          </p>
-          <p class="member-email">
-            ${m.email ? m.email : ""}
-          </p>
-        </div>
-      `).join("")
-    }
-  </div>
-`;
+      <div class="member-grid">
+        ${p.members.map(m => `
+          <div class="member-card">
+            <p class="member-name">
+              ${m.name}
+              ${m.leader ? `<span class="leader-tag">팀장</span>` : ""}
+            </p>
+            <p class="member-email">${m.email ? m.email : ""}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
 
+    /* 자료 다운로드 / 영상 여러 개 지원 */
+    const videoLinks = Array.isArray(p.links.video)
+      ? p.links.video.map((v, i) =>
+          `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
+        ).join("")
+      : (p.links.video ? `<a class="download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : "");
 
-    /* style.css에 만들어둔 download-link 클래스 사용햇슴요 
-    밑줄 없이 쓰고싶으면 저거 가져다가 클래스 지정해두면댈듯 */
     document.getElementById("links").innerHTML = `
-      ${p.links.ppt ? `<a class = "download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
-      ${p.links.report ? `<a class = "download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
-      ${p.links.github ? `<a class = "download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
-      ${p.links.video ? `<a class = "download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : ""}
-      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video ? 
-        "등록된 자료가 없습니다." : ""}
+      ${p.links.ppt ? `<a class="download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
+      ${p.links.report ? `<a class="download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
+      ${p.links.github ? `<a class="download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
+      ${videoLinks}
+      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video
+        ? "등록된 자료가 없습니다."
+        : ""}
     `;
   });
 </script>
