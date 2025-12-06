@@ -387,8 +387,10 @@
       "ppt": "/data/ppt/19_WAVIEW._PPTpdf.pdf",
       "report": "/data/report/19_WAVIEW.pdf",
       "github": "https://github.com/heeannw/AnOn.git",
-      "video": "/data/video/19_WAVIEW._1.mp4"
-      "video": "/data/video/19_WAVIEW._2.mp4"
+      "video": [
+        "/data/video/19_WAVIEW._1.mp4",
+        "/data/video/19_WAVIEW._2.mp4"
+      ]
     },
     "description": "",
     "thumbnail": "assets/thumbnails/default.jpg"
