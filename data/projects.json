@@ -329,19 +329,19 @@
     "teamName": "SyncView",
     "leader": "조유영",
     "members": [
-      { "name": "조유영", "leader": true, "email": "" },
-      { "name": "박수빈", "email": "" },
-      { "name": "전애리", "email": "" },
-      { "name": "조민정", "email": "" },
-      { "name": "이영지", "email": "" }
+      { "name": "조유영", "leader": true, "email": "t01047852048@gmail.com" },
+      { "name": "박수빈", "email": "sususu7303@gmail.com" },
+      { "name": "전애리", "email": "kkulkkeok90@gmail.com" },
+      { "name": "조민정", "email": "cmj6779as@gmail.com" },
+      { "name": "이영지", "email": "Kakat9516@gmail.com" }
     ],
     "projectTitle": "AI 기반 뉴스 요약 / 반응 분석 플랫폼",
     "class": "B01(서만석P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "/data/ppt/17_SyncView_ppt.pdf",
+      "report": "/data/report/17_SyncView.pdf",
+      "github": "https://github.com/JoYuYoung/syncview",
+      "video": "/data/video/17_SyncView_영상.mp4"
     },
     "description": "",
     "thumbnail": "assets/thumbnails/default.jpg"
