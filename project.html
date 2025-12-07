@@ -44,7 +44,7 @@ fetch("data/projects.json")
 
     document.getElementById("title").textContent = p.projectTitle;
     document.getElementById("team").textContent = p.teamName || p.leader;
-    document.getElementById("desc").textContent =
+    document.getElementById("desc").innerHTML =
       p.description || "등록된 설명이 없습니다.";
 
     /* 팀원 정보 출력 */
