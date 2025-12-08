@@ -9,7 +9,7 @@
     "projectTitle": "AI기반 건강 특화 빵집 시스템",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "data/ppt/1_빵모아.pdf",
+      "ppt": "/data/ppt/1_빵모아.pdf",
       "report": "",
       "github": "",
       "video": ""
@@ -29,7 +29,7 @@
     "projectTitle": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "",
+      "ppt": "/data/ppt/2_김성예.pdf",
       "report": "",
       "github": "",
       "video": ""
@@ -50,8 +50,8 @@
     "projectTitle": "LLM 챗봇 기반 저속노화 식단 제공 시스템",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "",
-      "report": "data/report/3_저속노화.pdf",
+      "ppt": "/data/ppt/3_이진서.pdf",
+      "report": "",
       "github": "",
       "video": ""
     },
@@ -70,8 +70,8 @@
     "projectTitle": "트로트의 진화 : 전통과 현대를 잇는 가사와 스타일의 변화",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "",
-      "report": "data/report/4_트로트.pdf",
+      "ppt": "/data/ppt/4_김노아.pdf",
+      "report": "",
       "github": "",
       "video": ""
     },
@@ -91,8 +91,8 @@
     "projectTitle": "한국프로야구 선수정보 AI챗봇제안",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "",
-      "report": "data/report/5_야구챗봇.pdf",
+      "ppt": "/data/ppt/5_이서진.pdf",
+      "report": "",
       "github": "",
       "video": ""
     },
@@ -113,7 +113,7 @@
     "class": "A01(하효동P)",
     "links": {
       "ppt": "data/ppt/6_김박천국.pdf",
-      "report": "data/report/6_김박천국.pdf",
+      "report": "",
       "github": "",
       "video": ""
     },
@@ -132,7 +132,7 @@
     "projectTitle": "영유아 Nursing",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "data/ppt/7_OnNURI.pdf",
+      "ppt": "/data/ppt/7_OnNURI.pdf",
       "report": "",
       "github": "",
       "video": ""
@@ -154,8 +154,8 @@
     "projectTitle": "관광 연계형 전통 설화 모바일 앱 서비스 '다담'",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "",
-      "report": "data/report/8_다담.pdf",
+      "ppt": "data/ppt/8_담다.pdf",
+      "report": "",
       "github": "",
       "video": ""
     },
