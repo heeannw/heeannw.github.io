@@ -366,7 +366,7 @@
       "video": "https://www.youtube.com/shorts/WLfL37Kn3IE",
       "github": "https://github.com/choisuvin/zariit.git"
     },
-    "description": "",
+    "description": "‘자리잇(JARIIT)’은 지하철에서 누가 언제 내리는지 알 수 없던 불편을 해결하기 위해 설계된 스마트 모빌리티 앱이다. 실시간 칸별 혼잡도와 하차 예정 좌석을 색상으로 보여주어 승객이 곧 비는 자리를 쉽게 파악할 수 있도록 돕는다.<br>또한 탑승·하차역을 설정하면 남은 정차역 수를 자동 계산해 좌석 상태를 단계별로 시각화하여 이동 중에도 직관적으로 확인할 수 있게 해준다. 이러한 기능은 복잡한 상황에서도 빠르게 정보를 파악할 수 있는 편의성을 제공한다.<br>‘자리잇(JARIIT)’은 지하철 좌석 정보를 공유하는 새로운 이용 문화를 만들어가며, 모든 승객이 보다 편안하게 이동할 수 있는 스마트한 대중교통 환경을 지향하는 서비스다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
