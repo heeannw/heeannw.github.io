@@ -1,89 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2025 졸업 작품 디지털 아카이브</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 졸업 작품 디지털 아카이브</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:title" content="2025 졸업 작품 디지털 아카이브" />
+  <meta property="og:description" content="한양여대 빅데이터과 졸업 작품 자료 모음" />
+  <meta property="og:url" content="https://heeannw.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://heeannw.github.io/assets/thumbnails/default.jpg" />
 </head>
 
 <body>
 
-<header class="header">
+  <header class="header">
     <h1>2025 졸업 작품 디지털 아카이브</h1>
     <p class="subtitle">Hanyang Women's University · Big Data</p>
-</header>
+  </header>
 
-<!-- 검색 + 필터 영역 -->
-<div class="filter-area">
+  <!-- 검색 + 필터 영역 -->
+  <div class="filter-area">
     <div class="search-box">
-        <input type="text" id="searchInput" placeholder="검색: 프로젝트명, 팀명, 팀원…" />
+      <input type="text" id="searchInput" placeholder="검색: 프로젝트명, 팀명, 팀원…" />
     </div>
 
     <select id="filterClass" class="filter-select">
-        <option value="all">전체</option>
-        <option value="A01">A01 하효동 교수님</option>
-        <option value="A02">A02 최성은 교수님</option>
-        <option value="B01">B01 서만석 교수님</option>
-        <option value="B02">B02 황철현 교수님</option>
+      <option value="all">전체</option>
+      <option value="A01">A01 하효동 교수님</option>
+      <option value="A02">A02 최성은 교수님</option>
+      <option value="B01">B01 서만석 교수님</option>
+      <option value="B02">B02 황철현 교수님</option>
     </select>
-</div>
+  </div>
 
-<section id="gallery" class="gallery">로딩 중...</section>
+  <section id="gallery" class="gallery">로딩 중...</section>
 
-<script>
-let rawData = [];
+  <script>
+    let rawData = [];
 
-// ✅ JSON 로드
-fetch("data/projects.json")
-  .then(res => res.json())
-  .then(data => {
-    rawData = data;
-    renderList(data);
-  });
+    // ✅ JSON 로드
+    fetch("data/projects.json")
+      .then(res => res.json())
+      .then(data => {
+        rawData = data;
+        renderList(data);
+      });
 
-// ✅ 카드 렌더링 함수
-function renderList(list) {
-  const gallery = document.getElementById("gallery");
+    // ✅ 카드 렌더링 함수
+    function renderList(list) {
+      const gallery = document.getElementById("gallery");
 
-  gallery.innerHTML = list
-    .map(
-      p => `
+      gallery.innerHTML = list
+        .map(
+          p => `
       <a href="project.html?id=${p.id}" class="card">
         <h3>${p.projectTitle}</h3>
         <p class="team">${p.teamName || p.leader || "팀명 없음"}</p>
       </a>`
-    )
-    .join("");
-}
+        )
+        .join("");
+    }
 
-// ✅ 🔍 검색 기능 (members 예외 처리 적용 버전)
-document.getElementById("searchInput").addEventListener("input", function () {
-  const keyword = this.value.toLowerCase();
+    // ✅ 🔍 검색 기능 (members 예외 처리 적용 버전)
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
 
-  const filtered = rawData.filter(p =>
-    p.projectTitle.toLowerCase().includes(keyword) ||
-    (p.teamName && p.teamName.toLowerCase().includes(keyword)) ||
-    (p.members && p.members.some(m => m.name.toLowerCase().includes(keyword)))
-  );
+      const filtered = rawData.filter(p =>
+        p.projectTitle.toLowerCase().includes(keyword) ||
+        (p.teamName && p.teamName.toLowerCase().includes(keyword)) ||
+        (p.members && p.members.some(m => m.name.toLowerCase().includes(keyword)))
+      );
 
-  renderList(filtered);
-});
+      renderList(filtered);
+    });
 
-// 📌 반별 필터 기능
-document.getElementById("filterClass").addEventListener("change", function () {
-  const value = this.value;
+    // 📌 반별 필터 기능
+    document.getElementById("filterClass").addEventListener("change", function () {
+      const value = this.value;
 
-  if (value === "all") return renderList(rawData);
+      if (value === "all") return renderList(rawData);
 
-  const filtered = rawData.filter(p => p.class.includes(value));
-  renderList(filtered);
-});
-</script>
+      const filtered = rawData.filter(p => p.class.includes(value));
+      renderList(filtered);
+    });
+  </script>
 
-<footer class="footer">
-  © 2025 HYWU Big Data · Graduation Archive
-</footer>
+  <footer class="footer">
+    © 2025 HYWU Big Data · Graduation Archive
+  </footer>
 
 </body>
+
 </html>
