@@ -42,6 +42,11 @@ fetch("data/projects.json")
   .then(list => {
     const p = list.find(x => x.id === id);
 
+    if (!p) {
+      document.getElementById("title").textContent = "프로젝트를 찾을 수 없습니다.";
+      return;
+    }
+
     /* 제목, 팀명, 설명 */
     document.getElementById("title").textContent = p.projectTitle;
     document.getElementById("team").textContent = p.teamName || p.leader;
@@ -51,7 +56,9 @@ fetch("data/projects.json")
     /* 팀원 */
     document.getElementById("members").innerHTML = `
       <div class="member-grid">
-        ${p.members.map(m => `
+        ${p.members
+          .map(
+            m => `
           <div class="member-card">
             <p class="member-name">
               ${m.name}
@@ -59,42 +66,48 @@ fetch("data/projects.json")
             </p>
             <p class="member-email">${m.email || ""}</p>
           </div>
-        `).join("")}
+        `
+          )
+          .join("")}
       </div>
     `;
 
     /* ----------------------------
-       자료 다운로드 (배열 완전 지원)
+       자료 다운로드 (배열 완전히 지원)
     ----------------------------- */
 
-    /* 1) PPT */
+    /* PPT */
     const pptLinks = p.links.ppt
       ? `<a class="download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>`
       : "";
 
-    /* 2) Report — 배열 or 단일 파일 */
+    /* Report (문자열 또는 배열 모두 지원) */
     let reportLinks = "";
     if (Array.isArray(p.links.report)) {
       reportLinks = p.links.report
-        .map((r, i) => 
-          `<a class="download-btn blue" href="${r}" target="_blank">📄 보고서 ${i + 1}</a><br>`
-        ).join("");
+        .map(
+          (r, i) =>
+            `<a class="download-btn blue" href="${r}" target="_blank">📄 보고서 ${i + 1}</a><br>`
+        )
+        .join("");
     } else if (p.links.report) {
       reportLinks = `<a class="download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>`;
     }
 
-    /* 3) GitHub */
+    /* GitHub */
     const githubLink = p.links.github
       ? `<a class="download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>`
       : "";
 
-    /* 4) Video — 배열 or 단일 파일 */
+    /* Video — 배열 or 단일 */
     let videoLinks = "";
     if (Array.isArray(p.links.video)) {
       videoLinks = p.links.video
-        .map((v, i) =>
-          `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
-        ).join("");
+        .map(
+          (v, i) =>
+            `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
+        )
+        .join("");
     } else if (p.links.video) {
       videoLinks = `<a class="download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>`;
     }
