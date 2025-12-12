@@ -9,80 +9,110 @@
 
 <body>
 
-<div id="content">로딩 중...</div>
+<div class="detail-header">
+  <h1 id="title" class="detail-title"></h1>
+  <p id="team" class="detail-team"></p>
+  <a href="index.html" class="back-btn">← 목록으로</a>
+</div>
+
+<div class="detail-body">
+  
+  <!-- 프로젝트 설명 -->
+  <h2>프로젝트 설명</h2>
+  <p id="desc">등록된 설명이 없습니다.</p>
+
+  <!-- 팀원 -->
+  <h2 style="margin-top:30px;">팀원 정보</h2>
+  <div id="members" class="member-box"></div>
+
+  <!-- 자료 다운로드 -->
+  <h2 style="margin-top:30px;">자료 다운로드</h2>
+  <div id="links" class="download-grid"></div>
+
+</div>
+
+<footer class="footer">© 2025 HYWU Big Data · Graduation Archive</footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = Number(params.get("id"));
 
-fetch("./data/projects.json")
+fetch("data/projects.json")
   .then(res => res.json())
-  .then(projects => {
-    const p = projects.find(x => x.id == id);
+  .then(list => {
+    const p = list.find(x => x.id === id);
 
-    if (!p) {
-      document.getElementById("content").innerHTML =
-        "<p style='padding:40px;text-align:center;'>프로젝트 정보를 불러올 수 없습니다.</p>";
-      return;
+    /* 제목, 팀명, 설명 */
+    document.getElementById("title").textContent = p.projectTitle;
+    document.getElementById("team").textContent = p.teamName || p.leader;
+    document.getElementById("desc").innerHTML =
+      p.description || "등록된 설명이 없습니다.";
+
+    /* 팀원 */
+    document.getElementById("members").innerHTML = `
+      <div class="member-grid">
+        ${p.members.map(m => `
+          <div class="member-card">
+            <p class="member-name">
+              ${m.name}
+              ${m.leader ? `<span class="leader-tag">팀장</span>` : ""}
+            </p>
+            <p class="member-email">${m.email || ""}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+
+    /* ----------------------------
+       자료 다운로드 (배열 완전 지원)
+    ----------------------------- */
+
+    /* 1) PPT */
+    const pptLinks = p.links.ppt
+      ? `<a class="download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>`
+      : "";
+
+    /* 2) Report — 배열 or 단일 파일 */
+    let reportLinks = "";
+    if (Array.isArray(p.links.report)) {
+      reportLinks = p.links.report
+        .map((r, i) => 
+          `<a class="download-btn blue" href="${r}" target="_blank">📄 보고서 ${i + 1}</a><br>`
+        ).join("");
+    } else if (p.links.report) {
+      reportLinks = `<a class="download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>`;
     }
 
-    document.title = p.projectTitle;
+    /* 3) GitHub */
+    const githubLink = p.links.github
+      ? `<a class="download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>`
+      : "";
 
-    document.getElementById("content").innerHTML = `
-      <header class="detail-header">
-        <div>
-          <h1 class="detail-title">${p.projectTitle}</h1>
-          <p class="detail-team">${p.teamName || p.leader}</p>
-        </div>
-        <a href="index.html" class="back-btn">← 목록으로</a>
-      </header>
+    /* 4) Video — 배열 or 단일 파일 */
+    let videoLinks = "";
+    if (Array.isArray(p.links.video)) {
+      videoLinks = p.links.video
+        .map((v, i) =>
+          `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
+        ).join("");
+    } else if (p.links.video) {
+      videoLinks = `<a class="download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>`;
+    }
 
-      <main class="detail-body">
-
-        <section class="section">
-          <h2 class="section-title">프로젝트 설명</h2>
-          document.getElementById("desc").innerHTML = p.description || "등록된 설명이 없습니다.";
-
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">팀원 정보</h2>
-          <div class="member-grid">
-            ${p.members.map(m => `
-              <div class="member-card">
-                <p class="member-name">${m.name} ${m.leader ? "<span class='leader-tag'>팀장</span>" : ""}</p>
-                <p class="member-email">${m.email || ""}</p>
-              </div>
-            `).join("")}
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">자료 다운로드</h2>
-          <div class="download-grid">
-
-            ${p.links.ppt ? `
-            <a class="download-btn blue" href="${p.links.ppt}" target="_blank">📄 발표자료 보기</a>` : ""}
-
-            ${p.links.report ? `
-            <a class="download-btn green" href="${p.links.report}" target="_blank">📘 보고서 보기</a>` : ""}
-
-            ${p.links.github ? `
-            <a class="download-btn dark" href="${p.links.github}" target="_blank">💻 GitHub</a>` : ""}
-
-            ${p.links.video ? `
-            <a class="download-btn purple" href="${p.links.video}" target="_blank">🎬 시연 영상</a>` : ""}
-
-            ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video 
-              ? "<p>등록된 자료가 없습니다.</p>" : ""}
-          </div>
-        </section>
-
-      </main>
-
-      <footer class="footer">
-        © 2025 HYWU Big Data · Graduation Archive
-      </footer>
+    /* 최종 렌더링 */
+    document.getElementById("links").innerHTML = `
+      ${pptLinks}
+      ${reportLinks}
+      ${githubLink}
+      ${videoLinks}
+      ${
+        !p.links.ppt &&
+        !p.links.report &&
+        !p.links.github &&
+        !p.links.video
+          ? "등록된 자료가 없습니다."
+          : ""
+      }
     `;
   });
 </script>
