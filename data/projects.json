@@ -426,20 +426,20 @@
     "teamName": "GS100",
     "leader": "조민서",
     "members": [
-      { "name": "조민서", "leader": true, "email": "" },
-      { "name": "윤서영", "email": "" },
-      { "name": "이유진", "email": "" },
-      { "name": "이영주", "email": "" }
+      { "name": "조민서", "leader": true, "email": "chominseo04@gmail.com" },
+      { "name": "윤서영", "email": "angelseoyoung1027@gmail.com" },
+      { "name": "이유진", "email": "reason17dblue@gmail.com" },
+      { "name": "이영주", "email": "dudwnfl612@naver.com" }
     ],
     "projectTitle": "데이터 기반 지역 축제 성공 예측 및 요인 분석",
     "class": "B02(황철현P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
+      "ppt": "data/ppt/21_GS100_ppt.pdf",
+      "report": "data/report/21_GS100_보고서.pdf",
+      "github": "https://github.com/TeamGreenSignal100/GS100",
       "video": ""
     },
-    "description": "",
+    "description": "본 프로젝트는 다양한 축제 데이터를 바탕으로, 어떤 축제가 성공하고 왜 성공하는지를 이해하기 위해 진행되었습니다.<br>축제 기본 정보부터 언론 보도, SNS 여론까지 여러 지표를 종합해 분석한 결과, 예산뿐 아니라 디지털 홍보와 온라인 여론이 축제의 성패를 좌우한다는 점을 확인했습니다.<br>이 연구는 앞으로의 축제 기획에서 어떤 요소에 더 집중해야 하는지 명확한 방향을 제시하고자 합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   }
 ]
