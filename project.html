@@ -42,12 +42,13 @@ fetch("data/projects.json")
   .then(list => {
     const p = list.find(x => x.id === id);
 
+    /* 제목, 팀명, 설명 */
     document.getElementById("title").textContent = p.projectTitle;
     document.getElementById("team").textContent = p.teamName || p.leader;
     document.getElementById("desc").innerHTML =
       p.description || "등록된 설명이 없습니다.";
 
-    /* 팀원 정보 출력 */
+    /* 팀원 */
     document.getElementById("members").innerHTML = `
       <div class="member-grid">
         ${p.members.map(m => `
@@ -56,27 +57,62 @@ fetch("data/projects.json")
               ${m.name}
               ${m.leader ? `<span class="leader-tag">팀장</span>` : ""}
             </p>
-            <p class="member-email">${m.email ? m.email : ""}</p>
+            <p class="member-email">${m.email || ""}</p>
           </div>
         `).join("")}
       </div>
     `;
 
-    /* 자료 다운로드 / 영상 여러 개 지원 */
-    const videoLinks = Array.isArray(p.links.video)
-      ? p.links.video.map((v, i) =>
-          `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
-        ).join("")
-      : (p.links.video ? `<a class="download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>` : "");
+    /* ----------------------------
+       자료 다운로드 (배열 완전 지원)
+    ----------------------------- */
 
+    /* 1) PPT */
+    const pptLinks = p.links.ppt
+      ? `<a class="download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>`
+      : "";
+
+    /* 2) Report — 배열 or 단일 파일 */
+    let reportLinks = "";
+    if (Array.isArray(p.links.report)) {
+      reportLinks = p.links.report
+        .map((r, i) => 
+          `<a class="download-btn blue" href="${r}" target="_blank">📄 보고서 ${i + 1}</a><br>`
+        ).join("");
+    } else if (p.links.report) {
+      reportLinks = `<a class="download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>`;
+    }
+
+    /* 3) GitHub */
+    const githubLink = p.links.github
+      ? `<a class="download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>`
+      : "";
+
+    /* 4) Video — 배열 or 단일 파일 */
+    let videoLinks = "";
+    if (Array.isArray(p.links.video)) {
+      videoLinks = p.links.video
+        .map((v, i) =>
+          `<a class="download-btn blue" href="${v}" target="_blank">🎬 시연 영상 ${i + 1}</a><br>`
+        ).join("");
+    } else if (p.links.video) {
+      videoLinks = `<a class="download-btn blue" href="${p.links.video}" target="_blank">🎬 시연 영상</a><br>`;
+    }
+
+    /* 최종 렌더링 */
     document.getElementById("links").innerHTML = `
-      ${p.links.ppt ? `<a class="download-btn blue" href="${p.links.ppt}" target="_blank">📊 PPT 다운로드</a><br>` : ""}
-      ${p.links.report ? `<a class="download-btn blue" href="${p.links.report}" target="_blank">📄 보고서</a><br>` : ""}
-      ${p.links.github ? `<a class="download-btn blue" href="${p.links.github}" target="_blank">💻 GitHub</a><br>` : ""}
+      ${pptLinks}
+      ${reportLinks}
+      ${githubLink}
       ${videoLinks}
-      ${!p.links.ppt && !p.links.report && !p.links.github && !p.links.video
-        ? "등록된 자료가 없습니다."
-        : ""}
+      ${
+        !p.links.ppt &&
+        !p.links.report &&
+        !p.links.github &&
+        !p.links.video
+          ? "등록된 자료가 없습니다."
+          : ""
+      }
     `;
   });
 </script>
