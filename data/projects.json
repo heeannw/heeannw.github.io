@@ -298,8 +298,8 @@
     "projectTitle": "인공지능 분리배출 쓰레기통 시스템",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "data/ppt/15_JEMS_ppt.pdf",
-      "report": "data/report/15_JEMS_보고서.pdf",
+      "ppt": "/data/ppt/15_JEMS_ppt.pdf",
+      "report": "/data/report/15_JEMS_보고서.pdf",
       "github": "https://github.com/jems-smarttrashproject/SmartTrashProject",
       "video": "https://www.youtube.com/watch?si=n9vWY6plOMkdy48S&v=GLAArqQgUN8&feature=youtu.be"
     },
