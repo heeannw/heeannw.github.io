@@ -129,18 +129,18 @@
     "teamName": "On-NURI",
     "leader": "홍수현",
     "members": [
-      { "name": "홍수현", "leader": true, "email": "" },
+      { "name": "홍수현", "leader": true, "email": "hongsuhyun0225@naver.com" },
       { "name": "김주희", "email": "" }
     ],
     "projectTitle": "영유아 Nursing",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/7_OnNURI.pdf",
+      "ppt": "/data/ppt/7_온누리.pdf",
       "report": "",
       "github": "",
       "video": ""
     },
-    "description": "",
+    "description": "영유아기는 발달 변화가 매우 빠르지만 보호자가 이를 객관적으로 판단하기 어려운 시기입니다. 본 연구는 키·몸무게·머리둘레 등 핵심 발달 데이터를 기반으로 LLM이 아이의 상태를 분석하고 또래와 비교해 잠재적 발달 지연 신호를 파악하는 기능을 제공합니다.<br>분석 결과는 보호자가 이해하기 쉬운 형태로 시각화되며, 개별 아이의 특성에 맞춘 맞춤형 양육 및 학습 가이드를 함께 제시합니다. 이러한 과정을 통해 발달 관리의 부담을 줄이고 보다 과학적인 양육 결정을 돕는 것이 목표입니다.<br>본 프로젝트는 빅데이터와 LLM 기술을 결합해 영유아 발달을 체계적으로 지원하는 맞춤형 발달 관리 웹 서비스를 제안합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
