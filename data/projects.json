@@ -171,17 +171,17 @@
     "teamName": "",
     "leader": "이유진",
     "members": [
-      { "name": "이유진", "leader": true, "email": "" }
+      { "name": "이유진", "leader": true, "email": "jin.you1215@gmail.com" }
     ],
     "projectTitle": "영화흥행 예측",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "",
-      "report": "",
+      "ppt": "/data/ppt/9_이유진_PPT.pptx",
+      "report": "/data/report/9_이유진_보고서.hwpx",
       "github": "",
       "video": ""
     },
-    "description": "",
+    "description": "영화 박스오피스 데이터를 분석하여 계절과 장르에 따라 어떤 영화가 흥행하는지 살펴보고, 최근 영화 시장의 변화 흐름을 이해하는 것을 목표로 한다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
