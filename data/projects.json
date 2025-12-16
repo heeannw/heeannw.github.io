@@ -290,20 +290,20 @@
     "teamName": "JEMS",
     "leader": "최지우",
     "members": [
-      { "name": "최지우", "leader": true, "email": "" },
-      { "name": "이은서", "email": "" },
-      { "name": "김민후", "email": "" },
-      { "name": "김수정", "email": "" }
+      { "name": "최지우", "leader": true, "email": "woowzui@gmail.com" },
+      { "name": "이은서", "email": "rkddkwl203@gmail.com" },
+      { "name": "김민후", "email": "kmh040305@gmail.com" },
+      { "name": "김수정", "email": "sujeongg884@gmail.com" }
     ],
     "projectTitle": "인공지능 분리배출 쓰레기통 시스템",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "data/ppt/15_JEMS_ppt.pdf",
+      "report": "data/report/15_JEMS_보고서.pdf",
+      "github": "https://github.com/jems-smarttrashproject/SmartTrashProject",
+      "video": "https://www.youtube.com/watch?si=n9vWY6plOMkdy48S&v=GLAArqQgUN8&feature=youtu.be"
     },
-    "description": "",
+    "description": "인공지능 분리배출 쓰레기통 시스템은 사용자가 촬영한 폐기물을 AI가 실시간으로 인식·분류하여 정확한 배출을 돕는 스마트 환경 장치입니다. AI가 분류한 결과가 사용자가 선택한 항목과 일치할 경우 해당 쓰레기통이 자동으로 개방되어 보다 편리한 분리배출을 지원합니다.<br>또한 초음파 센서를 활용해 쓰레기 적재량을 지속적으로 모니터링하며, 일정 수준 이상이 되면 관리자에게 알림을 전송해 운영 효율성을 높입니다.<br>본 시스템은 분리배출 과정에서의 오류와 불편을 줄이고 도시 폐기물 관리의 효율성을 향상시키며, 스마트 환경 인프라 구축에 기여하는 것을 목표로 합니다."
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
