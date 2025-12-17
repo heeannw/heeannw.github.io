@@ -29,37 +29,6 @@
     "projectTitle": "레디투고(Ready To Go)",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/2_레디투고"
-  {
-    "id": 1,
-    "teamName": "빵모아",
-    "leader": "이민아",
-    "members": [
-      { "name": "이민아", "leader": true, "email": "" }
-    ],
-    "projectTitle": "AI기반 건강 특화 빵집 시스템",
-    "class": "A01(하효동P)",
-    "links": {
-      "ppt": "/data/ppt/1_빵모아.pdf",
-      "report": "",
-      "github": "",
-      "video": ""
-    },
-    "description": "",
-    "thumbnail": "assets/thumbnails/default.jpg"
-  },
-
-  {
-    "id": 2,
-    "teamName": "",
-    "leader": "김성예",
-    "members": [
-      { "name": "김성예", "leader": true, "email": "sungyekim0201@gmail.com" },
-      { "name": "김민채", "email": "frang424@naver.com" }
-    ],
-    "projectTitle": "레디투고(Ready To Go)",
-    "class": "A01(하효동P)",
-    "links": {
       "ppt": "/data/ppt/2_레디투고_ppt.pdf",
       "report": "",
       "github": "",
