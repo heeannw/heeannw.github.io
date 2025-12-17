@@ -84,7 +84,7 @@
     "teamName": "떡토리",
     "leader": "",
     "members": [
-      { "name": "이하영", "leader": true, "email": "hayoung20305@naver.com" }
+      { "name": "이하영", "leader": true, "email": "hayoung20305@naver.com" },
       { "name": "이서진", "email": "jinjinx28@naver.com" },
       { "name": "이선화", "email": "awhnoes@gmail.com" },
     ],
