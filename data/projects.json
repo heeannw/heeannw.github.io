@@ -81,20 +81,20 @@
 
   {
     "id": 5,
-    "teamName": "",
+    "teamName": "떡토",
     "leader": "",
     "members": [
-      { "name": "이서진", "email": "" },
-      { "name": "이선화", "email": "" },
-      { "name": "이하영", "email": "" }
+      { "name": "이하영", "leader": true, "email": "hayoung20305@naver.com" }
+      { "name": "이서진", "email": "jinjinx28@naver.com" },
+      { "name": "이선화", "email": "awhnoes@gmail.com" },
     ],
     "projectTitle": "한국프로야구 선수정보 AI챗봇제안",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/5_이서진.pdf",
+      "ppt": "/data/ppt/5_떡토리_ppt.pdf",
       "report": "",
       "github": "",
-      "video": ""
+      "video": "https://www.youtube.com/watch?v=2erc6YpezZ4"
     },
     "description": "",
     "thumbnail": "assets/thumbnails/default.jpg"
