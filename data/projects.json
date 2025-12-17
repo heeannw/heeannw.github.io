@@ -23,18 +23,49 @@
     "teamName": "",
     "leader": "김성예",
     "members": [
-      { "name": "김성예", "leader": true, "email": "" },
-      { "name": "김민채", "email": "" }
+      { "name": "김성예", "leader": true, "email": "sungyekim0201@gmail.com" },
+      { "name": "김민채", "email": "frang424@naver.com" }
     ],
-    "projectTitle": "AI 기반 날씨 분석을 활용한 맞춤형 외출 준비 가이드 시스템",
+    "projectTitle": "레디투고(Ready To Go)",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/2_김성예.pdf",
+      "ppt": "/data/ppt/2_레디투고
+  {
+    "id": 1,
+    "teamName": "빵모아",
+    "leader": "이민아",
+    "members": [
+      { "name": "이민아", "leader": true, "email": "" }
+    ],
+    "projectTitle": "AI기반 건강 특화 빵집 시스템",
+    "class": "A01(하효동P)",
+    "links": {
+      "ppt": "/data/ppt/1_빵모아.pdf",
       "report": "",
       "github": "",
       "video": ""
     },
     "description": "",
+    "thumbnail": "assets/thumbnails/default.jpg"
+  },
+
+  {
+    "id": 2,
+    "teamName": "",
+    "leader": "김성예",
+    "members": [
+      { "name": "김성예", "leader": true, "email": "sungyekim0201@gmail.com" },
+      { "name": "김민채", "email": "frang424@naver.com" }
+    ],
+    "projectTitle": "레디투고(Ready To Go)",
+    "class": "A01(하효동P)",
+    "links": {
+      "ppt": "/data/ppt/2_레디투고_ppt.pdf",
+      "report": "",
+      "github": "",
+      "video": "https://www.youtube.com/shorts/LLIG9nEMfE8"
+    },
+    "description": "본 프로젝트는 기상청 단기예보 데이터를 기반으로 AI가 날씨 변화를 분석하여 사용자 맞춤형 외출 준비 가이드를 제공하는 시스템입니다. 사용자의 지역과 기상 상황을 종합적으로 해석해 필요한 옷차림, 휴대해야 할 준비물, 주의해야 할 요소 등을 자동으로 안내합니다.<br>이를 통해 사용자는 일상 속 외출 준비의 번거로움을 줄일 수 있으며, 갑작스러운 날씨 변화로 인한 불편이나 위험을 최소화할 수 있습니다. 개인별 상황에 맞춘 안내는 실질적인 도움을 제공하고, 보다 안전하고 편리한 생활을 지원합니다.<br>또한 직관적인 구성과 쉬운 접근성을 기반으로 누구나 활용 가능한 실용적인 서비스를 목표로 하며, 다양한 환경에서 일관된 편의성을 제공할 수 있도록 설계되었습니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
