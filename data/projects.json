@@ -86,7 +86,7 @@
     "members": [
       { "name": "이하영", "leader": true, "email": "hayoung20305@naver.com" },
       { "name": "이서진", "email": "jinjinx28@naver.com" },
-      { "name": "이선화", "email": "awhnoes@gmail.com" },
+      { "name": "이선화", "email": "awhnoes@gmail.com" }
     ],
     "projectTitle": "한국프로야구 선수정보 AI챗봇제안",
     "class": "A01(하효동P)",
