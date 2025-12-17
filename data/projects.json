@@ -40,22 +40,22 @@
 
   {
     "id": 3,
-    "teamName": "",
+    "teamName": "이진서, 박하율, 권지수",
     "leader": "이진서",
     "members": [
-      { "name": "이진서", "leader": true, "email": "" },
-      { "name": "박하율", "email": "" },
-      { "name": "권지수", "email": "" }
+      { "name": "이진서", "leader": true, "email": "hera7769@naver.com" },
+      { "name": "박하율", "email": "katyjjang@naver.com" },
+      { "name": "권지수", "email": "jisu20040118@gmail.com" }
     ],
     "projectTitle": "LLM 챗봇 기반 저속노화 식단 제공 시스템",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/3_이진서.pdf",
+      "ppt": "/data/ppt/3_이진서.pptx",
       "report": "",
       "github": "",
       "video": ""
     },
-    "description": "",
+    "description": "본 프로젝트는 저속노화에 대한 관심이 증가함에 따라, 건강한 식단 관리를 지원하는 LM 챗봇 기반 식단 제공 시스템을 개발하는 것을 목표로 합니다. 사용자의 요구에 맞춘 정보를 직관적으로 안내할 수 있도록 대화형 구조로 설계되었습니다.<br>저속노화에 효과적인 식재료와 영양성분 데이터를 수집해 카테고리별 레시피로 정리하고, 이를 통해 사용자에게 맞춤형 식단을 제공합니다. 사용자는 식단 유형을 선택하기만 하면 관련 레시피와 영양 정보를 간편하게 확인할 수 있습니다.<br>본 시스템은 일상에서 저속노화 식습관을 실천할 수 있도록 돕고, 장기적으로 건강한 노화를 유도하는 데 기여하고자 합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
