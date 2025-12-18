@@ -249,18 +249,18 @@
     "teamName": "5조",
     "leader": "이지수",
     "members": [
-      { "name": "이지수", "leader": true, "email": "" },
-      { "name": "정다나", "email": "" }
+      { "name": "이지수", "leader": true, "email": "liasas56@gmail.com" },
+      { "name": "정다나", "email": "gumpoong04@gmail.com" }
     ],
     "projectTitle": "AI 표정인식기",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "",
-      "report": "",
+      "ppt": "data/ppt/13_빅데이터과_졸업작품심사_5팀_이지수.pdf",
+      "report": "data/report/13_5조.hwp",
       "github": "",
       "video": ""
     },
-    "description": "",
+    "description": "저희는 라즈베리파이를 이용하여 실시간 얼굴인식, 감정 분석 시스템을 개발했습니다.<br>cctv 등에 접목시켜 실생활에 사용할 수 있는 유용한 시스템입니다",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
