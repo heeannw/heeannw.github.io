@@ -64,18 +64,18 @@
     "teamName": "",
     "leader": "김노아",
     "members": [
-      { "name": "김노아", "leader": true, "email": "" },
-      { "name": "김하랑", "email": "" }
+      { "name": "김노아", "leader": true, "email": "ukkop@naver.com" },
+      { "name": "김하랑", "email": "pingpabb_bing@naver.com" }
     ],
     "projectTitle": "트로트의 진화 : 전통과 현대를 잇는 가사와 스타일의 변화",
     "class": "A01(하효동P)",
     "links": {
-      "ppt": "/data/ppt/4_김노아.pdf",
+      "ppt": "/data/ppt/4_김노아,김하랑팀.pdf",
       "report": "",
       "github": "",
       "video": ""
     },
-    "description": "",
+    "description": "본 프로젝트는 시대 변화 속에서 트로트 가사가 어떻게 변해왔는지, 그리고 앞으로 어떤 방향으로 나아가야 하는지를 분석하기 위해 진행되었습니다. 가사의 내용적 변화와 사회적 흐름을 함께 살펴보며 트로트 장르의 정체성과 확장 가능성을 탐구하는 것을 목표로 합니다.<br>수집된 가사 데이터는 웹 크롤링 후 텍스트 전처리를 거쳐 단어 빈도 분석과 토픽 모델링을 수행하였으며, 이를 기반으로 주요 키워드와 주제 흐름을 시각적으로 표현했습니다. 또한 케이팝 가사와의 비교 분석을 통해 시대별 대중음악의 변화를 더욱 명확하게 파악할 수 있도록 구성했습니다.<br>이 연구를 통해 트로트 가사의 변화 흐름을 객관적으로 조명하고, 향후 트로트가 다양한 세대와 문화 속에서 어떤 방향으로 발전할 수 있을지 전략적 방향성을 제시합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
