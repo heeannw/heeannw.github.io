@@ -312,18 +312,18 @@
     "teamName": "F4",
     "leader": "신지윤",
     "members": [
-      { "name": "신지윤", "leader": true, "email": "" },
-      { "name": "박윤아", "email": "" }
+      { "name": "신지윤", "leader": true, "email": "summerand000@gmail.com" },
+      { "name": "박윤아", "email": "a93498670@gmail.com" }
     ],
-    "projectTitle": "Sencity (도심 야생동물 발견 신고)",
+    "projectTitle": "AI 기반 도심 내 야생동물 출몰 알림 및 신고 앱 ’SENCITY’",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "https://www.canva.com/design/DAG0V9_fI-U/Vj8wxjC9VMSBYVR_QOORHg/view?utm_content=DAG0V9_fI-U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7f40e691e4",
+      "report": "data/report/16_F4.pdf",
+      "github": "https://github.com/yuna830/sencity_portfolio",
+      "video": "https://youtu.be/zceRyRVJq2I"
     },
-    "description": "",
+    "description": "SENCITY는 AI 기반 자동 탐지 기술을 활용해 도심 내 야생동물 출몰을 실시간으로 인식하고 공유하는 통합 안전 관리 시스템입니다. 사용자 신고에 의존하던 기존 방식의 한계를 보완하고, 보다 효율적인 도시 안전 환경을 구축하기 위해 설계되었습니다.<br>본 시스템은 YOLOv5s와 EfficientNet-B1 모델을 적용해 영상과 이미지 속 야생동물을 자동 분석하며, 탐지된 결과는 모바일 앱과 관리자 대시보드로 즉시 전달됩니다. 이를 통해 시민과 지자체가 빠르게 상황을 파악하고 대응할 수 있도록 지원합니다.<br>SENCITY는 데이터 기반의 신속한 대응 체계를 마련하고, 예방 중심의 도시 안전 관리 문화를 조성하는 데 기여하는 것을 목표로 합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
