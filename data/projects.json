@@ -229,18 +229,18 @@
     "teamName": "천지창조",
     "leader": "조나영",
     "members": [
-      { "name": "조나영", "leader": true, "email": "" },
-      { "name": "천지인", "email": "" }
+      { "name": "조나영", "leader": true, "email": "nayoung7075@gmail.com" },
+      { "name": "천지인", "email": "jcheon7213@gmail.com" }
     ],
     "projectTitle": "단계별 졸음 감지",
     "class": "A02(최성은P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "data/ppt/12_천지창조_ppt.pdf",
+      "report": "data/report/12_천지창조 보고서.docx",
+      "github": "https://github.com/dlfma12/-.git",
+      "video": "https://www.youtube.com/watch?v=0sVpUiH3pUQ"
     },
-    "description": "",
+    "description": "본 프로젝트는 졸음운전으로 인한 교통사고의 심각성을 인지하고, 이를 사전에 예방하기 위해 설계된 시스템입니다. 운전자의 졸음 상태를 실시간으로 감지해 적절한 경고를 제공함으로써 사고 위험을 줄이고 더 안전한 주행 환경을 지원합니다.<br>이를 통해 졸음운전으로 발생하는 사고율을 감소시키고, 도로 전반의 안전성을 향상시키는 데 기여하고자 합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
