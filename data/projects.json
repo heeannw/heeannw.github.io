@@ -404,20 +404,20 @@
     "teamName": "이음",
     "leader": "김나연",
     "members": [
-      { "name": "김나연", "leader": true, "email": "" },
-      { "name": "이혜민", "email": "" },
-      { "name": "김수향", "email": "" },
-      { "name": "김혜원", "email": "" }
+      { "name": "김나연", "leader": true, "email": "0309098er@gmail.com" },
+      { "name": "이혜민", "email": "nephiana707@gmail.com" },
+      { "name": "김수향", "email": "uuu5783234@gmail.com" },
+      { "name": "김혜원", "email": "hyewwwn@gmail.com" }
     ],
     "projectTitle": "또래 멘토링 , 고령층 학습 효율",
     "class": "B02(황철현P)",
     "links": {
-      "ppt": "",
-      "report": "",
-      "github": "",
-      "video": ""
+      "ppt": "https://docs.google.com/presentation/d/10F0W3I8Ss7IBA5k5U7mgxx9_Xvl6q3eI/edit?usp=drive_link&ouid=114567857393709683493&rtpof=true&sd=true",
+      "report": "https://docs.google.com/document/d/1SDBzAf7K3CT3no-SgBeenLf0YYM-0ecw7CtlxTiCmYY/edit?usp=drive_link",
+      "github": "https://github.com/Rowhilen/MBTIproject",
+      "video": "data/video/20_이음.mp4"
     },
-    "description": "",
+    "description": "초고령사회로 가까워지는 현재, 노인의 더 나은 삶을 지원하기 위해 성향 분석 기반의 또래 멘토링 모델을 제안합니다. 고령층의 학습 특성과 요구를 반영하여 맞춤형 학습 환경을 설계하고, 이를 통해 지속적인 배움과 사회적 참여를 촉진하고자 합니다.<br>본 프로토타입 모델은 고령층의 학습 효율을 높이고 삶의 질 향상에 기여하는 것을 목표로 합니다.",
     "thumbnail": "assets/thumbnails/default.jpg"
   },
 
